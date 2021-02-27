@@ -10,14 +10,15 @@ puts "Creating Plants..."
   )
   puts "Created #{user.email}"
 end
+
 100.times do
-  suit = Suit.create(
-    user_id: User.all.sample.id,
+  plant = Plant.create(
+    name: 
     description: Faker::Superhero.name,
     space: rand(32..50),
     light: Faker::Color.color_name,
-    plant_type: ["Formal", "Posh", "Hipster", "Informal"].sample,
-    watering:["Interview", "Funeral", "Wedding", "Party", "Date"].sample,
+    plant_type: ["flowering", "fern", "vegetable", "fruit", "succulent"].sample,
+    watering:
     )
 
 puts "Created Plant #{plant.id} has been created"
