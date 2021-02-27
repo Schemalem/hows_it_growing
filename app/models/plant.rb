@@ -5,6 +5,6 @@ class Plant < ApplicationRecord
   validates :description, presence: true
   validates :space, presence: true, inclusion: { in: %w(Indoors Outdoors) }
   validates :light, presence: true
-  validates :type, presence: true, inclusion: { in: %w(flowering fern vegetable fruit succulent)}
+  validates :plant_type, presence: true, inclusion: { in: %w(flowering fern vegetable fruit succulent) }
   validates :watering, presence: true
 end
