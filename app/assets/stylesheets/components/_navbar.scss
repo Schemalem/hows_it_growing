@@ -1,12 +1,16 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $main;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-lewagon .navbar-brand {
   width: 40px;
+}
+
+.nav-logo {
+  height: 35px;
 }

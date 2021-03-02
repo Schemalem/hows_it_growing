@@ -1,0 +1,15 @@
+.btn-main {
+  background-color: $yellow;
+  color: $white;
+  border-radius: 6px;
+  transition: box-shadow 0.2s;
+
+  &:hover {
+  box-shadow: 1px 2px 1px $main;
+  color: $white;
+  }
+}
+
+.btn-landing {
+  width: 180px;
+}
