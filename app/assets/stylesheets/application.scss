@@ -11,3 +11,16 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body {
+  color: $navy;
+}
+
+a {
+  text-decoration: none !important;
+
+ &:hover{
+  color: $main!important;
+ }
+
+}

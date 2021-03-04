@@ -1,1 +1,15 @@
 // Specific CSS for your home-page
+.q-module{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: $navy;
+
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
+.q-logo {
+  height: 35px;
+}
