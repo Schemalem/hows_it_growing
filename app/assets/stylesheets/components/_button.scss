@@ -1,13 +1,19 @@
 .btn-main {
-  background-color: $yellow;
-  color: $white;
-  border-radius: 6px;
-  transition: box-shadow 0.2s;
+  background-image: linear-gradient(to right, $yellow 0%, $l-yellow  61%, $yellow  100%)
+}
+.btn-main {
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 10px;
+    display: block;
 
   &:hover {
-  box-shadow: 1px 2px 1px $main;
-  color: $white;
-  }
+      background-position: right center; /* change the direction of the change here */
+      color: #fff;
+      text-decoration: none;
+    }
 }
 
 .btn-landing {
