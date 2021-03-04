@@ -12,6 +12,7 @@ class UserPlantsController < ApplicationController
     @plant = Plant.find(params[:plant_id])
     @user_plant = UserPlant.new(user_plant_params_new)
     @user_plant.user = current_user
+    #@user_plant.plant = @plant
     # not sure how we'd link user_plant and plant. Woud it be @user_plant.plant?
     if @user_plant.save!
       redirect_to user_plant_path(@user_plant)
@@ -40,7 +41,7 @@ class UserPlantsController < ApplicationController
   def destroy
     @user_plant = UserPlant.find(params[:id])
     @user_plant.destroy
-    redirect_to @user_plant, notice: "You killed your plant ☠️"
+    redirect_to @user_plant, notice: 'You killed your plant ☠️'
   end
 
   private

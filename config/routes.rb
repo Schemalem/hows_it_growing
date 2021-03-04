@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   get 'plant_patch', to: 'pages#plant_patch', as: :plant_patch
   get 'about_us', to: 'pages#about_us', as: :about_us
 
-  resources :plants, only: [:index, :show]
-  resources :user_plants, only: [:new, :create, :show, :edit, :update, :destroy]
+  resources :plants, only: [:index, :show] do
+    resources :user_plants, only: [:new, :create]
+  end
+  resources :user_plants, only: [:show, :edit, :update, :destroy]
 
 end
