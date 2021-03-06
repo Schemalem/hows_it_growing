@@ -1,1 +1,47 @@
-<h1>Test</h1>
+<div class="title-module">
+  <div class="container">
+    <h1> we’re rooting for these matches! </h1>
+    <p> based on your answers, we think you'd get along with one of these...</p>
+    <%= image_tag "hig-logo-plant.png", class: "q-logo" %>
+  </div>
+
+  <div class="match-cards">
+    <% @matches.each do |plant| %>
+      <div class="match-card" data-toggle="modal" data-target="#exampleModalCenter">
+        <%= image_tag "https://images.pexels.com/photos/3234638/pexels-photo-3234638.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" %>
+      <%#= cl_image_tag plant.photo.key, height: 300, width: 400, crop: :fill %>
+        <div class="match-info">
+          <h3><%=  plant.name.downcase %><%#= link_to plant.name, plant_path(plant)%> </h3>
+          <%= link_to "pick me!", user_plants_path(plant_id: plant.id), method: :post, class: "btn btn-light" %>
+          <%#= root for link_to above: user_plants_path(plant_id: plant.id) points to create method in user_plants, passes the plant.is as plant_id in the () section%>
+        </div>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle"><%= plant.name.downcase %></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p> <%= plant.description %> </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-light" data-dismiss="modal">close</button>
+              <%= link_to "pick me!", user_plants_path(plant_id: plant.id), method: :post, class: "btn btn-main
+              " %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="d-flex justify-content-center pt-2">
+    <%= link_to "show me more", matches_path, class: "btn btn-light" %>
+  </div>
+
+</div>

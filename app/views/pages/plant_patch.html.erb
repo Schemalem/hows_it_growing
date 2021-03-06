@@ -1,16 +1,21 @@
-<h1>Test</h1>
-
-<% @user_plants.each do |user_plant| %>
-<tr>
-  <td><%= user_plant.name %></td>
-  <td><%= user_plant.start_date %></td>
-  <td><%= user_plant.size %></td>
-  <td><%= link_to 'Show', user_plant %></td>
-  <td><%= link_to 'Edit', edit_user_plant_path(user_plant) %></td>
-  <td><%= link_to 'Destroy', user_plant, method: :delete, data: { confirm: 'Are you sure you want to kill your plant?' } %></td>
-</tr>
-<% end %>
+<div class="q-module">
+  <div class="container">
+    <h2> your plant patch </h2>
+    <%= image_tag "hig-logo-plant.png", class: "q-logo" %>
+  </div>
+  <div class="q-cards">
+    <% @my_plants.each do |my_plant| %>
+      <%= link_to user_plant_path(my_plant) do %>
+      <div class="q-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/1407305/pexels-photo-1407305.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)">
+        <%= my_plant.plant.name.downcase %>
+        <%#= link_to "here", user_plant_path(my_plant), class: "btn btn-main" %>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
 
 <div id="add-new">
   <% link_to 'Add a new plant', new_plant_user_plant_path, class: "btn" %>
 </div>
+

@@ -1,13 +1,11 @@
 .btn-main {
-  background-image: linear-gradient(to right, $yellow 0%, $l-yellow  61%, $yellow  100%)
-}
-.btn-main {
-    text-align: center;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: white;
-    border-radius: 10px;
-    display: block;
+  background-image: linear-gradient(to right, $yellow 0%, $l-yellow  61%, $yellow  100%);
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
 
   &:hover {
       background-position: right center; /* change the direction of the change here */
@@ -18,4 +16,20 @@
 
 .btn-landing {
   width: 180px;
+}
+
+.btn-light {
+  background-image: linear-gradient(to right, $green 0%, $l-yellow  61%, $green  100%);
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
+
+  &:hover {
+      background-position: right center; /* change the direction of the change here */
+      color: #fff;
+      text-decoration: none;
+    }
 }
