@@ -77,6 +77,7 @@ product_url_list = scraper_index()
      # p plant_photo = doc.search('.product-featured-img').attribute("src").value
      #  file = URI.open(plant_photo)
      #  plant.photo.attach(io: file, filename: 'plant.jpg', content_type: 'image/jpg')
+
     plant.save!
     puts "Created Indoor Plant #{plant.id} has been created"
   end
