@@ -11,7 +11,7 @@ puts "Creating Plants..."
   user = User.create(
     email: Faker::Internet.email,
     password: "hello12345",
-    first_name: Faker::Name.first_name,   
+    first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     user_name: Faker::Hipster.words
   )
@@ -30,8 +30,8 @@ def scraper_index(plant_url = 'https://www.leafenvy.co.uk/collections/all')
   url_list
 end
 
-def scrape_product(product_url, space = "Indoors")
-  html = open(product_url).read
+def scrape_product(plant_url, space = "Indoors")
+  html = open(plant_url).read
   doc = Nokogiri::HTML(html)
 
   product_details = {}
@@ -72,11 +72,11 @@ product_url_list = scraper_index()
   product_url_list.each do |url|
     product_details = scrape_product(url)
     plant = Plant.new(product_details)
-    html = open(url).read
-    doc = Nokogiri::HTML(html)
-   p plant_photo = doc.search('.product-featured-img').attribute("src").value
-    file = URI.open(plant_photo)
-    plant.photo.attach(io: file, filename: 'plant.jpg', content_type: 'image/jpg')
+     #  html = open(url).read
+     #  doc = Nokogiri::HTML(html)
+     # p plant_photo = doc.search('.product-featured-img').attribute("src").value
+     #  file = URI.open(plant_photo)
+     #  plant.photo.attach(io: file, filename: 'plant.jpg', content_type: 'image/jpg')
     plant.save!
     puts "Created Indoor Plant #{plant.id} has been created"
   end
