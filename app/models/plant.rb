@@ -1,5 +1,6 @@
 class Plant < ApplicationRecord
   has_many  :user_plants, dependent: :destroy
+  has_one_attached :photo
 
   validates :name, presence: true
   validates :description, presence: true
