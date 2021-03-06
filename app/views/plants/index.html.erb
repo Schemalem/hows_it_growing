@@ -22,14 +22,19 @@
   <% @plants.each do |plant| %>
     <div class="q-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1463320898484-cdee8141c787?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80)">
       <%= link_to plant do %>
-      <h5><%= plant.name %></h5>
-      <div class="badges">
-        <span class="badge badge-pill badge-primary"><%= plant.watering %>
-        </span>
-        <span class="badge badge-pill badge-warning"><%= plant.light %></span>
-        <span class="badge badge-pill badge-secondary"><%= plant.space %></span>
-        <span class="badge badge-pill badge-danger"><%= plant.pet_friendly ? "Pet friendly" : "Toxic for pets" %></span>
-      </div>
+        <% if plant.photo.attached? %>
+          <div class="" style="height: 200px;">
+            <%= cl_image_tag plant.photo.key, style: 'height: 200px;'  %>
+          </div>
+        <% end %>
+        <h5><%= plant.name %></h5>
+        <div class="badges">
+          <span class="badge badge-pill badge-primary"><%= plant.watering %>
+          </span>
+          <span class="badge badge-pill badge-warning"><%= plant.light %></span>
+          <span class="badge badge-pill badge-secondary"><%= plant.space %></span>
+          <span class="badge badge-pill badge-danger"><%= plant.pet_friendly ? "Pet friendly" : "Toxic for pets" %></span>
+        </div>
       <% end %>
     </div>
   <% end %>
