@@ -56,6 +56,6 @@ class UserPlantsController < ApplicationController
   end
 
   def user_plant_params_new
-    params.require(:user_plant).permit(:start_date, :size)
+    params.require(:user_plant).permit(:start_date, :size, photos: [])
   end
 end

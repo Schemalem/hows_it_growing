@@ -2,7 +2,11 @@ class PlantsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @plants = Plant.all
+    if params[:query].present?
+      @plants = Plant.search_form
+    else 
+      @plants = Plant.all
+    end
   end
 
   def show
@@ -12,6 +16,6 @@ class PlantsController < ApplicationController
   private
 
   def plant_params
-    params.require(:plant).permit(:name, :description, :space, :light, :type, :watering, :pet_friendly)
+    params.require(:plant).permit(:name, :description, :space, :light, :type, :watering, :pet_friendly, :photo)
   end
 end
