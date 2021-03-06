@@ -1,1 +1,19 @@
-<h1>Test</h1>
+<div class="q-module">
+  <div class="container">
+    <h2> your plant patch </h2>
+    <%= image_tag "hig-logo-plant.png", class: "q-logo" %>
+  </div>
+  <div class="q-cards">
+    <% @my_plants.each do |my_plant| %>
+      <%= link_to user_plant_path(my_plant) do %>
+      <div class="q-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/1407305/pexels-photo-1407305.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)">
+        <%= my_plant.plant.name.downcase %>
+        <%#= link_to "here", user_plant_path(my_plant), class: "btn btn-main" %>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+ <%# link_to "", user_plant_path(my_plant), class: "btn btn-main btn-landing" do %>
+<%# end %>

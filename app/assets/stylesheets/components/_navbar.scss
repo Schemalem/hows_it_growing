@@ -13,4 +13,10 @@
 
 .nav-logo {
   height: 35px;
+  transition: all .3s ease; /* back to normal */
+
+   &:hover {
+   transform: translate3D(0,-1px,0) scale(1.03);
+   transition: all .2s ease; /* zoom in */
+  }
 }

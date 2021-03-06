@@ -8,9 +8,15 @@ class PagesController < ApplicationController
   end
 
   def matches
+    @plants = Plant.all
+    @matches = @plants.sample(3)
+    @user_plant = UserPlant.new
+    #this replaces the user_plants new method as the info comes from this page
   end
 
   def plant_patch
+    @user = current_user
+    @my_plants = @user.user_plants
   end
 
   def about_us

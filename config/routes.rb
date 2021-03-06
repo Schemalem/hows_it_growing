@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   get 'about_us', to: 'pages#about_us', as: :about_us
 
   resources :plants, only: [:index, :show] do
-    resources :user_plants, only: [:new, :create]
+    #resources :user_plants, only: [:new, :create]
   end
-  resources :user_plants, only: [:show, :edit, :update, :destroy]
+  resources :user_plants, only: [:create, :show, :edit, :update, :destroy]
 
 end

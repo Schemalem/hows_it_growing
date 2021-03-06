@@ -3,21 +3,25 @@ class UserPlantsController < ApplicationController
     @user_plants = UserPlant.all
   end
 
-  def new
-    @user_plant = UserPlant.new
-    @plant = Plant.find(params[:plant_id])
-  end
+  # def new
+  #   @user_plant = UserPlant.new
+  #   @plant = Plant.find(params[:plant_id])
+  # end
 
   def create
     @plant = Plant.find(params[:plant_id])
-    @user_plant = UserPlant.new(user_plant_params_new)
-    @user_plant.user = current_user
-    #@user_plant.plant = @plant
-    # not sure how we'd link user_plant and plant. Woud it be @user_plant.plant?
-    if @user_plant.save!
-      redirect_to user_plant_path(@user_plant)
+    @user_plant = UserPlant.new
+    if current_user
+      @user_plant.user = current_user
+      @user_plant.plant = @plant
+      # not sure how we'd link user_plant and plant. Woud it be @user_plant.plant?
+      if @user_plant.save!
+        redirect_to plant_patch_path
+      else
+        redirect_to matches_path
+      end
     else
-      render :new
+      redirect_to new_user_session_path
     end
   end
 
