@@ -33,3 +33,19 @@
       text-decoration: none;
     }
 }
+
+.btn-grey {
+  background-image: linear-gradient(to right, $gray 0%, $gray  61%, $light-gray  100%);
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
+
+  &:hover {
+      background-position: right center; /* change the direction of the change here */
+      color: #fff;
+      text-decoration: none;
+    }
+}
