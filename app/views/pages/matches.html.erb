@@ -8,7 +8,7 @@
   <div class="match-cards">
     <% @matches.each do |plant| %>
       <div class="match-card" data-toggle="modal" data-target="#exampleModalCenter">
-        <%= image_tag "https://images.pexels.com/photos/3234638/pexels-photo-3234638.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" %>
+        <%= image_tag cl_image_path plant.photo.key, height: 300, width: 300 %>
       <%#= cl_image_tag plant.photo.key, height: 300, width: 400, crop: :fill %>
         <div class="match-info">
           <h3><%=  plant.name.downcase %><%#= link_to plant.name, plant_path(plant)%> </h3>
