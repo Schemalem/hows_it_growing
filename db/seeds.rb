@@ -77,7 +77,12 @@ product_url_list = scraper_index()
      # p plant_photo = doc.search('.product-featured-img').attribute("src").value
      #  file = URI.open(plant_photo)
      #  plant.photo.attach(io: file, filename: 'plant.jpg', content_type: 'image/jpg')
-
+      html = open(url).read
+      doc = Nokogiri::HTML(html)
+     p plant_photo = doc.search('.product-featured-img').attribute("src").value
+      # p 'https:'+plant_photo
+      file = URI.open('https:'+plant_photo)
+      plant.photo.attach(io: file, filename: 'plant.jpg', content_type: 'image/jpg')
     plant.save!
     puts "Created Indoor Plant #{plant.id} has been created"
   end
@@ -86,6 +91,14 @@ product_url_list = scraper_index("https://www.leafenvy.co.uk/collections/all?pag
   product_url_list.each do |url|
     product_details = scrape_product(url,"Outdoors")
     plant = Plant.new(product_details)
+
+     html = open(url).read
+      doc = Nokogiri::HTML(html)
+     p plant_photo = doc.search('.product-featured-img').attribute("src").value
+      # p 'https:'+plant_photo
+      file = URI.open('https:'+plant_photo)
+      plant.photo.attach(io: file, filename: 'plant.jpg', content_type: 'image/jpg')
+
     plant.save!
     puts "Created Outdoor Plant #{plant.id} has been created"
   end
