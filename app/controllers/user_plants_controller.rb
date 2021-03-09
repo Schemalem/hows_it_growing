@@ -43,19 +43,21 @@ class UserPlantsController < ApplicationController
   end
 
   def destroy
+    @plant_patch =
     @user_plant = UserPlant.find(params[:id])
     @user_plant.destroy
-    redirect_to @user_plant, notice: 'You killed your plant ☠️'
+    redirect_to plant_patch_path, notice: 'You killed your plant ☠️'
   end
 
   private
 
   def user_plant_params
-    params.require(:user_plant).permit(:size) # watering schedule? Consider adding it so that the user can tell us that
+    params.require(:user_plant).permit(:start_date, :size, photos: [])# watering schedule? Consider adding it so that the user can tell us that
     # they've watered their plant, and we don't seend to send a reminder
   end
 
-  def user_plant_params_new
-    params.require(:user_plant).permit(:start_date, :size, photos: [])
-  end
+  #def user_plant_params_new
+    #params.require(:user_plant).permit(:start_date, :size, photos: [])
+  #end
+  # there's no need for a new params, as there is only one type of form
 end
