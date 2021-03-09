@@ -1,7 +1,7 @@
-<h1>All plants</h1>
+<h1>all plants</h1>
 <div class="jumbotron">
   <!-- <h1 class="display-4">Search for a specific plant</h1> -->
-  <p class="lead">Search for a specific plant</p>
+  <p class="lead">search for a specific plant</p>
   <!-- <hr class="my-4"> -->
   <!-- <p>It uses utility classes for typography and spacing to space content out within the larger container.</p> -->
   <p class="lead">
@@ -10,9 +10,9 @@
            <%= text_field_tag :query,
              params[:query],
              class: "form-control",
-           placeholder: "Find a plant"
+           placeholder: "find a plant"
            %>
-           <%= submit_tag "Go!", class: "btn btn-orange" %>
+           <%= submit_tag "go!", class: "btn btn-orange" %>
          <% end %>
       </div>
   </p>
@@ -20,23 +20,23 @@
 
 <div class="q-cards">
   <% @plants.each do |plant| %>
-    <div class="q-card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path plant.photo.key %>')">
-      <%#= link_to plant do %>
-      <%# if plant.photo.attached? %>
-          <!-- <div class=""> -->
-            <%#= cl_image_tag plant.photo.key %>
-        <div>
+    <%= link_to plant do %>
+       <div class="q-card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path plant.photo.key %>')">
+        <%# if plant.photo.attached? %>
+            <!-- <div class=""> -->
+              <%#= cl_image_tag plant.photo.key %>
           <div>
-            <h5 id="plant-name"><%= plant.name %></h5>
+            <div>
+              <h5 id="plant-name"><%= plant.name.downcase %></h5>
+            </div>
+            <div class="badges">
+            <span class="badge badge-pill badge-primary"><%= plant_watering_message(plant).downcase %></span>
+            <span class="badge badge-pill badge-warning"><%= plant_light_message(plant).downcase %></span>
+            <span class="badge badge-pill badge-secondary"><%= plant.space.downcase %></span>
+            <span class="badge badge-pill badge-danger"><%= plant.pet_friendly ? "pet friendly" : "toxic for pets" %></span>
           </div>
-          <div class="badges">
-          <span class="badge badge-pill badge-primary"><%= plant_watering_message(plant) %>
-            </span>
-          <span class="badge badge-pill badge-warning"><%= plant_light_message(plant) %></span>
-          <span class="badge badge-pill badge-secondary"><%= plant.space %></span>
-          <span class="badge badge-pill badge-danger"><%= plant.pet_friendly ? "Pet friendly" : "Toxic for pets" %></span>
         </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
 </div>
