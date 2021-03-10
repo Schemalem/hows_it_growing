@@ -16,7 +16,7 @@
             <span class="badge rounded-pill bg-success">started growing: <%= my_plant.start_date %></span>
             <span class="badge rounded-pill bg-light text-dark"> this plant is <%= my_plant.size %> inches</span>
             <!-- <span class="badge badge-pill badge-primary"> -->
-            <!-- <%#= plant_watering_message(plant).downcase %></span> -->
+            <!-- <%#= my_plant.plant.plant_watering_message(plant).downcase %></span> -->
             <span class="badge badge-pill badge-warning"><%#= plant_light_message(plant).downcase %></span>
             <span class="badge badge-pill badge-danger"><%= my_plant.plant.pet_friendly ? "pet friendly" : "toxic for pets" %></span>
           </div>
