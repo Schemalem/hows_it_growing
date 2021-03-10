@@ -1,1 +1,36 @@
-<h1>Test</h1>
+<div class="q-module">
+  <h2> how's your <span class="green"><%=  @plant.name.downcase %> </span> growing?</h2>
+</div>
+
+<div class="containers">
+  <!-- Left Column / Headphones Image -->
+  <div class="left-column">
+    <div class="left-column img">
+     <%= cl_image_tag @plant.photo.key %>
+    </div>
+  </div>
+  <!-- Right Column -->
+  <div class="right-column">
+    <!-- Product Description -->
+    <div class="product-description">
+      <span>indoor plants</span>
+      <h1><%= @plant.name.downcase %></h1>
+      <p><%= @plant.description %></p>
+    </div>
+ 
+    <!-- Product Configuration -->
+      <div class="plant_overview">
+        <div class="plant_features">
+          <h3 class="pl-2 pb-2"> how not to kill your plant 👾</h3>
+          <ul>
+              <li> <%= image_tag "https://cdn2.iconfinder.com/data/icons/spring-30/30/Gardening_Tools-512.png", class: "q-logo" %>it looks like you haven't started growing this yet! </li>
+              <li> <%= image_tag "https://cdn2.iconfinder.com/data/icons/spring-30/30/Gardening_Tools-512.png", class: "q-logo" %> you've been growing this plant since <span class="green"></span></li>
+              <li> <%= image_tag "https://cdn1.iconfinder.com/data/icons/education-filled-outline-8/64/Education-Filled_2-512.png", class: "q-logo" %> it looks like you haven't added a measurement yet! </li>
+              <li> <%= image_tag "https://cdn1.iconfinder.com/data/icons/education-filled-outline-8/64/Education-Filled_2-512.png", class: "q-logo" %> last time we checked, your plant was <span class="green">inches tall</span></li>
+            <li> <%= image_tag "https://cdn2.iconfinder.com/data/icons/spring-30/30/Watering_Can-512.png", class: "q-logo" %> remember to  <span class="green"><%=  @plant.watering.downcase%></span> </li>
+            <li> <%= image_tag "https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-01-512.png", class: "q-logo" %> your time to shine! your plant needs <span class="green"><%=  @plant.light.downcase%></span> </li>
+          </ul>
+        </div>
+      </div>
+  </div>
+</div>
