@@ -1,6 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
-require 'pry'
+# require 'pry'
 
 puts "Cleaning database..."
 Plant.destroy_all
