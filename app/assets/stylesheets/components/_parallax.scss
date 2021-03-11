@@ -1,0 +1,60 @@
+// .parallax {
+
+  /* Full height */
+//   height: 100%;
+
+//   /* Create the parallax scrolling effect */
+//   background-attachment: fixed;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+// }
+
+/* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+
+.parallax-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  // perspective: 8px;
+  // perspective-origin: 0%;
+  display: flex;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateZ(0px);
+
+  img {
+    background-size: cover;
+    min-height: 100%;
+    min-width: 1024px;
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+  }
+}
+
+
+.card-authors {
+  margin-top: auto;
+  margin-bottom: 50px;
+  transform-origin: 0;
+  transform: translateZ(3px);
+}
