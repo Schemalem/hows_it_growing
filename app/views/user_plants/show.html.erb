@@ -23,7 +23,7 @@
       <%= link_to edit_user_plant_path, class: "btn btn-main" do%>
         <i class="fas fa-edit"></i><span> edit</span>
       <% end %>
-      <%= link_to user_plant_path(@user_plant), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-grey" do%>
+      <%= link_to user_plant_path(@user_plant), method: :delete, data: { confirm: 'Are you sure you want to kill your plant?' }, class: "btn btn-grey" do%>
         <i class="fas fa-trash-alt"></i><span> delete</span>
       <% end %>
     </div>
