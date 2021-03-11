@@ -9,7 +9,6 @@ class Plant < ApplicationRecord
   validates :plant_type, presence: true, inclusion: { in: %w(Flowering Fern Vegetable Fruit Succulent) }
   validates :watering, presence: true
 
-
   include PgSearch::Model
   pg_search_scope :search_form,
     against: [ :name, :type, :description, :light, :space, :plant_type, :watering],

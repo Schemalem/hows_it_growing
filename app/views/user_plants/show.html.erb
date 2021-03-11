@@ -1,1 +1,39 @@
-<h1>Test</h1>
+<div class="q-module">
+  <h2> how's your <span class="green"><%=  @user_plant.plant.name.downcase %> </span> growing?</h2>
+</div>
+
+<div class="plant_overview">
+  <div class="plant_features">
+    <h3 class="pl-2 pb-2"> <%=  @user_plant.plant.name.downcase %>  </h3>
+    <ul>
+      <% if @user_plant.start_date.nil? %>
+        <li> <%= image_tag "https://cdn2.iconfinder.com/data/icons/spring-30/30/Gardening_Tools-512.png", class: "q-logo" %>it looks like you haven't started growing this yet! </li>
+      <% else %>
+        <li> <%= image_tag "https://cdn2.iconfinder.com/data/icons/spring-30/30/Gardening_Tools-512.png", class: "q-logo" %> you've been growing this plant since <span class="green"><%= @user_plant.start_date %></span></li>
+      <% end %>
+      <% if @user_plant.start_date.nil? %>
+        <li> <%= image_tag "https://cdn1.iconfinder.com/data/icons/education-filled-outline-8/64/Education-Filled_2-512.png", class: "q-logo" %> it looks like you haven't added a measurement yet! </li>
+      <% else %>
+        <li> <%= image_tag "https://cdn1.iconfinder.com/data/icons/education-filled-outline-8/64/Education-Filled_2-512.png", class: "q-logo" %> last time we checked, your plant was <span class="green"><%= @user_plant.size %> inches tall</span></li>
+      <% end %>
+      <li> <%= image_tag "https://cdn2.iconfinder.com/data/icons/spring-30/30/Watering_Can-512.png", class: "q-logo" %> remember to  <span class="green"><%=  @user_plant.plant.watering.downcase%></span> </li>
+      <li> <%= image_tag "https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-01-512.png", class: "q-logo" %> your time to shine! your plant needs <span class="green"><%=  @user_plant.plant.light.downcase%></span> </li>
+    </ul>
+    <div class="button_list d-flex">
+      <%= link_to edit_user_plant_path, class: "btn btn-main" do%>
+        <i class="fas fa-edit"></i><span> edit</span>
+      <% end %>
+      <%= link_to user_plant_path(@user_plant), method: :delete, data: { confirm: 'Are you sure you want to kill your plant?' }, class: "btn btn-grey" do%>
+        <i class="fas fa-trash-alt"></i><span> delete</span>
+      <% end %>
+    </div>
+  </div>
+  <div class="plant_image">
+    <%= cl_image_tag @user_plant.plant.photo.key, style: 'height: 300px;' %>
+  </div>
+</div>
+<div class="plant_overview">
+  <%= link_to plant_patch_path, class: "btn btn-grey btn-landing" do%>
+    <i class="fas fa-arrow-circle-left"></i><span> back to my patch</span>
+  <% end %>
+</div>

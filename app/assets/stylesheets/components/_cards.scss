@@ -39,9 +39,10 @@
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   text-align: center;
   color: $main;
-  background-size: cover;
+  background-size: none;
   background-position: center;
-  height: 200px;
+  height: 300px;
+  // width: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,6 +71,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px 5px;
+  margin-left: 250px;
 }
 
 @media(max-width: 992px) {
@@ -89,11 +91,12 @@
   // background: $gray;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   text-align: center;
+  width: 300px;
 
   img {
-    height: 200px;
+    height: 300px;
     width: 100%;
-    object-fit: cover;
+    object-fit: none;
   }
 }
 
@@ -106,3 +109,39 @@
   position: relative;
   text-align: center;
 }
+
+.card-authors {
+  margin: auto;
+}
+.card-author {
+  display: flex;
+  background: white;
+  margin-top: 60px;
+  margin-bottom: 40px;
+
+  img {
+    height: 200px;
+    max-height: 400px;
+  }
+
+  .description {
+    margin-left: 8px;
+    padding: 16px;
+    max-width: 650px;
+  }
+
+  #raz {
+    text-align: right;
+  }
+}
+
+@media screen and ( max-width: 1024px ) {
+img.responsive { width: 200px; height: auto; }
+}
+@media screen and ( min-width:1025px ) {
+img.responsive { width: 200px; height: 250px; }
+}
+// @media screen and ( min-width: 1081px ) {
+// img.responsive { width: 400px; }
+// }
+// img.responsive { height: auto; }
