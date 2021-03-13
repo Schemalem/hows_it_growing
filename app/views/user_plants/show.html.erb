@@ -28,9 +28,19 @@
       <% end %>
     </div>
   </div>
+
   <div class="plant_image">
-    <%= cl_image_tag @user_plant.plant.photo.key, style: 'height: 300px;' %>
+    
+      <% @user_plant.photos.each do |photo| %>
+        <% if @user_plant.photos.count > 0  %>
+          <%= cl_image_tag photo.key, style: 'height: 300px' %>
+        <% else %>
+        <%= cl_image_tag @user_plant.plant.photo.key, style: 'height: 300px;' %>
+      <% end %>
+    <% end %>
   </div>
+
+
 </div>
 <div class="plant_overview">
   <%= link_to plant_patch_path, class: "btn btn-grey btn-landing" do%>
