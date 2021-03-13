@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   end
   resources :user_plants, only: [:create, :show, :edit, :update, :destroy]
 
+  post 'matches', to: 'pages#create_match', as: :matches_new
 end
