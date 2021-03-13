@@ -3,7 +3,7 @@ class PlantsController < ApplicationController
 
   def index
     if params[:query].present?
-      @plants = Plant.search_form
+      @plants = Plant.search_form(params[:query])
     else
       @plants = Plant.all
     end
