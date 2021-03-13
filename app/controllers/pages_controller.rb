@@ -2,12 +2,15 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[home questions matches about_us]
 
   def home
+    @match = Match.new
   end
 
   def questions
+
   end
 
   def matches
+    #logic here!
     @plants = Plant.all
     @matches = @plants.sample(3)
     @user_plant = UserPlant.new
