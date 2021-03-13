@@ -3,21 +3,31 @@
   max-width: 1300px;
   margin: 0 auto;
   padding: 15px;
-  display: flex;
-  flex-direction: row;
-  position: relative;
+  // display: flex;
+  // flex-direction: row;
+  // position: relative;
+  width: 80%;
+  color: $navy;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px 5px;
+  align-items: center;
+}
+
+@media(max-width: 1000px) {
+  .containers {
+   grid-template-columns: 1fr;
+  }
 }
 
   /* Columns */
 .left-column {
-  width: 45%;
   position: relative;
   order: 1;
   justify-content: left;
 }
-  
+
 .right-column {
-  width: 55%;
   order: 2;
   justify-content: right;
 }
