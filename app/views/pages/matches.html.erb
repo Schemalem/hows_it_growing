@@ -12,6 +12,7 @@
       <%#= cl_image_tag plant.photo.key, height: 300, width: 400, crop: :fill %>
         <div class="match-info">
           <h3><%=  plant.name.downcase %> <%=  plant.space.downcase %><%#= link_to plant.name, plant_path(plant)%> </h3>
+          <p>  <%=  plant.light.downcase %> </p>
           <%= link_to "pick me!", user_plants_path(plant_id: plant.id), method: :post, class: "btn btn-light" %>
           <%#= root for link_to above: user_plants_path(plant_id: plant.id) points to create method in user_plants, passes the plant.is as plant_id in the () section%>
         </div>

@@ -3,8 +3,32 @@
     <div class="container">
       <h2> lettuce get started... </h2>
       <%= image_tag "hig-logo-plant.png", class: "q-logo" %>
-      <p> what's your goal? </p>
     </div>
+
+  <div class="form">
+      <%= simple_form_for [ @match ] do |f| %>
+        <%= f.input :q1, label: "what's your goal?", as: :radio_buttons,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: { class: "category-selector" },
+            collection: [ "grow something edible", "grow something beautiful", "grow something unkillable", "grow something for fun"] %>
+        <%= f.input :q2, label: "do you want to grow your plant indoors or outdoors in soil?",
+            as: :radio_buttons,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: { class: "category-selector" },
+            collection: ["indoors", "outdoors", "don't mind"] %>
+        <%= f.input :q3, label: "how much light does your new plant home get?", as: :range,
+          input_html: { min: 1, max: 5, steps: 1, value: 3, class: "slider", id: "myRange" }%>
+        <%= f.submit "Submit", class: "btn btn-main" %>
+        <%#= link_to suit_path(@suit), class:"btn btn-gray" do%>
+      <% end %>
+  </div>
+
+
+
     <div class="q-cards">
       <button class="q-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/1407305/pexels-photo-1407305.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)">
         <h4> grow something edible </h4>
