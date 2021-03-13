@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px 5px;
+  padding: 20px;
 }
 
 @media(max-width: 1305px) {
@@ -26,6 +27,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px 5px;
+  padding: 20px;
 }
 
 @media(max-width: 1305px) {
@@ -67,6 +69,7 @@
 
   h4 {
     padding: 20px;
+    font-size: xx-large;
   }
 
   &:hover {
@@ -81,13 +84,15 @@
 
 .match-cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 20px 10px;
+    width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 35px;
+  margin: 20px auto;
+  padding: 25px;
 }
 @media(max-width: 1305px) {
   .match-cards {
     grid-template-columns: 1fr 1fr 1fr;
-  }
 }
 
 @media(max-width: 992px) {
@@ -107,13 +112,18 @@
   // background: $gray;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   text-align: center;
-  width: 300px;
+  transition: all .5s ease; /* back to normal */
 
   img {
     height: 300px;
     width: 100%;
-    object-fit: none;
+    object-fit: cover;
   }
+
+    &:hover {
+      transform: translate3D(0,-1px,0) scale(1.03);
+      transition: all .4s ease; /* zoom in */
+    }
 }
 
 .match-info {

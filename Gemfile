@@ -41,6 +41,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 # gem 'simple_form_extension'
 
+
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'
