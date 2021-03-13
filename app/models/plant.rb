@@ -11,7 +11,7 @@ class Plant < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :search_form,
-    against: [ :name, :type, :description, :light, :space, :plant_type, :watering],
+    against: [ :name, :description, :light, :space, :plant_type, :watering],
     using: {
       tsearch: { prefix: true }
     }
