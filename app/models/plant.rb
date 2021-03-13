@@ -16,6 +16,11 @@ class Plant < ApplicationRecord
       tsearch: { prefix: true }
     }
 
+  #pg_search_scope :match_form, against: [:space]
+    # using: {
+    #   tsearch: { prefix: true }
+    # }
+
   def plant_watering_message
     if watering.include? "1-2 weeks"
       "Water every 1-2 weeks"
