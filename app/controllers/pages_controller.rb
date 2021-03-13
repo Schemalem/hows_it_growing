@@ -12,7 +12,7 @@ class PagesController < ApplicationController
   def matches
     #logic here!
     @plants = Plant.all
-    # @matches = create_match
+    @matches = @plants.sample(3)
     @user_plant = UserPlant.new
     #this replaces the user_plants new method as the info comes from this page
   end
