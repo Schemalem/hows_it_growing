@@ -11,10 +11,15 @@ class Plant < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :search_form,
-    against: [:name, :type, :description, :light, :space, :plant_type, :watering],
+    against: [:name, :description, :light, :space, :plant_type, :watering],
     using: {
       tsearch: { prefix: true }
   }
+
+  #pg_search_scope :match_form, against: [:space]
+    # using: {
+    #   tsearch: { prefix: true }
+    # }
 
   def plant_watering_message
     if watering.include? "1-2 weeks"
