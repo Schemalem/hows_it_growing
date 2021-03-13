@@ -4,6 +4,12 @@
   grid-gap: 20px 5px;
 }
 
+@media(max-width: 1305px) {
+  .q-cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
 @media(max-width: 992px) {
   .q-cards {
    grid-template-columns: 1fr 1fr;
@@ -20,6 +26,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px 5px;
+}
+
+@media(max-width: 1305px) {
+  .space-cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 @media(max-width: 992px) {
@@ -42,7 +54,7 @@
   background-size: none;
   background-position: center;
   height: 300px;
-  // width: 300px;
+  width: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,7 +65,7 @@
   margin: 8px;
   transition: all .5s ease; /* back to normal */
 
-  h4{
+  h4 {
     padding: 20px;
   }
 
@@ -69,9 +81,13 @@
 
 .match-cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px 5px;
-  margin-left: 250px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px 10px;
+}
+@media(max-width: 1305px) {
+  .match-cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 @media(max-width: 992px) {
@@ -133,15 +149,51 @@
   #raz {
     text-align: right;
   }
+  @media screen and ( max-width: 1024px ) {
+  img.responsive { width: 200px; height: auto; }
+  }
+  @media screen and ( min-width:1025px ) {
+  img.responsive { width: 200px; height: 250px; }
+  }
+  // @media screen and ( min-width: 1081px ) {
+  // img.responsive { width: 400px; }
+  // }
+  // img.responsive { height: auto; }
 }
 
-@media screen and ( max-width: 1024px ) {
-img.responsive { width: 200px; height: auto; }
+.cards-container {
+  display: flex;
+  justify-content: center;
 }
-@media screen and ( min-width:1025px ) {
-img.responsive { width: 200px; height: 250px; }
+
+.question-card {
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  text-align: center;
+  color: $main;
+  background-size: none;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 2px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 8px;
+  transition: all .5s ease; /* back to normal */
+
+  h4 {
+    padding: 20px;
+  }
+
+  &:hover {
+   transform: translate3D(0,-1px,0) scale(1.03);
+   transition: all .4s ease; /* zoom in */
+  }
+
+  &:focus {
+    box-shadow: 0 0 15px $green;
+  }
 }
-// @media screen and ( min-width: 1081px ) {
-// img.responsive { width: 400px; }
-// }
-// img.responsive { height: auto; }
