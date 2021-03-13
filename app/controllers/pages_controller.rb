@@ -54,15 +54,15 @@ class PagesController < ApplicationController
 
   def q3_answer
     answers_to_query = ''
-    if params[:match][:q3] == 1
+    if params[:match][:q3] == "1"
       answers_to_query = "no"
-    elsif params[:match][:q3] == 2
+    elsif params[:match][:q3] == "2"
       answers_to_query = "low"
-    elsif params[:match][:q3] == 3
+    elsif params[:match][:q3] == "3"
       answers_to_query = "indirect"
-    elsif params[:match][:q3] == 4
+    elsif params[:match][:q3] == "4"
       answers_to_query = "medium"
-    elsif params[:match][:q3] == 5
+    elsif params[:match][:q3] == "5"
       answers_to_query = "bright"
     end
     return answers_to_query
