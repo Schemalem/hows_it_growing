@@ -11,15 +11,14 @@
         <%= image_tag cl_image_path plant.photo.key, height: 300, width: 300 %>
       <%#= cl_image_tag plant.photo.key, height: 300, width: 400, crop: :fill %>
         <div class="match-info">
-          <h3><%=  plant.name.downcase %> <%=  plant.space.downcase %><%#= link_to plant.name, plant_path(plant)%> </h3>
-          <p>  <%=  plant.light.downcase %> </p>
+          <h3><%=  plant.name.downcase %><%#= link_to plant.name, plant_path(plant)%> </h3>
           <%= link_to "pick me!", user_plants_path(plant_id: plant.id), method: :post, class: "btn btn-light" %>
           <%#= root for link_to above: user_plants_path(plant_id: plant.id) points to create method in user_plants, passes the plant.is as plant_id in the () section%>
         </div>
       </div>
       <!-- Modal -->
       <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLongTitle"><%= plant.name.downcase %></h5>
