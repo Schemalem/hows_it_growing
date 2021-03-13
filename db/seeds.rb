@@ -51,11 +51,13 @@ def scrape_product(plant_url, space = "Indoors")
 
   product_details[:space] = space
 
-  if doc.search('.custom-pdp-description-icon-sun').text.present?
-    product_details[:light] = doc.search('.custom-pdp-description-icon-sun').text
-  else
-    product_details[:light] = "Bright, indirect light"
-  end
+  # if doc.search('.custom-pdp-description-icon-sun').text.present?
+  #   product_details[:light] = doc.search('.custom-pdp-description-icon-sun').text
+  # else
+  #   product_details[:light] = "Bright, indirect light"
+  # end
+
+  product_details[:light] = ["no light", "low light", "indirect light", "medium light", "bright light"].sample
 
   product_details[:plant_type] = ["Fern", "Flowering", "Fruit", "Vegetable", "Succulent"].sample
 
@@ -101,6 +103,22 @@ product_url_list = scraper_index("https://www.leafenvy.co.uk/collections/all?pag
 
     plant.save!
     puts "Created Outdoor Plant #{plant.id} has been created"
+  end
+
+product_url_list = scraper_index("https://www.leafenvy.co.uk/collections/all?page=3")
+  product_url_list.each do |url|
+    product_details = scrape_product(url,"Indoors")
+    plant = Plant.new(product_details)
+
+     html = open(url).read
+      doc = Nokogiri::HTML(html)
+     p plant_photo = doc.search('.product-featured-img').attribute("src").value
+      # p 'https:'+plant_photo
+      file = URI.open('https:'+plant_photo)
+      plant.photo.attach(io: file, filename: 'plant.jpg', content_type: 'image/jpg')
+
+    plant.save!
+    puts "Created Indoor Plant #{plant.id} has been created"
   end
 
 puts "Finished!"
