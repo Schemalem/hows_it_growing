@@ -155,3 +155,36 @@ img.responsive { width: 200px; height: 250px; }
 // img.responsive { width: 400px; }
 // }
 // img.responsive { height: auto; }
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+}
+.question-card {
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  text-align: center;
+  color: $main;
+  background-size: none;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 2px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 8px;
+  transition: all .5s ease; /* back to normal */
+  h4 {
+    padding: 20px;
+  }
+  &:hover {
+   transform: translate3D(0,-1px,0) scale(1.03);
+   transition: all .4s ease; /* zoom in */
+  }
+  &:focus {
+    box-shadow: 0 0 15px $green;
+  }
+}

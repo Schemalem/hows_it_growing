@@ -4,78 +4,40 @@
       <h2> lettuce get started... </h2>
       <%= image_tag "hig-logo-plant.png", class: "q-logo" %>
     </div>
-
-  <div class="form">
-      <%= simple_form_for [ @match ] do |f| %>
-        <%= f.input :q1, label: "what's your goal?", as: :radio_buttons,
-            collection_wrapper_tag: 'div',
-            collection_wrapper_class: 'category-wrapper',
-            item_wrapper_class: 'category-item',
-            input_html: { class: "category-selector" },
-            collection: [ "grow something edible", "grow something beautiful", "grow something unkillable", "grow something for fun"] %>
-        <%= f.input :q2, label: "do you want to grow your plant indoors or outdoors in soil?",
-            as: :radio_buttons,
-            collection_wrapper_tag: 'div',
-            collection_wrapper_class: 'category-wrapper',
-            item_wrapper_class: 'category-item',
-            input_html: { class: "category-selector" },
-            collection: ["indoors", "outdoors", "don't mind"] %>
-        <%= f.input :q3, label: "how much light does your new plant home get?", as: :range,
-          input_html: { min: 1, max: 5, steps: 1, value: 3, class: "slider", id: "myRange" }%>
-        <%= f.submit "Submit", class: "btn btn-main" %>
-        <%#= link_to suit_path(@suit), class:"btn btn-gray" do%>
-      <% end %>
-  </div>
-
-
-
-    <div class="q-cards">
-      <button class="q-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/1407305/pexels-photo-1407305.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)">
-        <h4> grow something edible </h4>
-      </button>
-      <button class="q-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/807598/pexels-photo-807598.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
-        <h4> grow something beautiful </h4>
-      </button>
-      <button class="q-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/2382325/pexels-photo-2382325.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260)">
-        <h4> grow something unkillable </h4>
-      </button>
-      <button class="q-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/2318555/pexels-photo-2318555.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260)">
-        <h4> grow something for fun </h4>
-      </button>
-    </div>
-  </div>
-
-  <div class="q-module">
-    <div class="container">
-      <%= image_tag "hig-logo-plant.png", class: "q-logo" %>
-      <p> do you want to grow your plant indoors in a pot or outdoors in soil? </p>
-    </div>
-    <div class="space-cards">
-      <button class="q-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/3125195/pexels-photo-3125195.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500)">
-        <h4> indoors </h4>
-      </button>
-      <button class="q-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1486328228599-85db4443971f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)">
-        <h4> outdoors </h4>
-      </button>
-      <button class="q-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/6231753/pexels-photo-6231753.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500)">
-        <h4> don't mind! </h4>
-      </button>
-    </div>
-  </div>
-  <div class="q-module">
-    <div class="container">
-      <%= image_tag "hig-logo-plant.png", class: "q-logo" %>
-      <p> how much light does your new plant home get? </p>
-      <div class="slidecontainer">
-        <input type="range" min="1" max="5" steps= "1" value="2" class="slider" id="myRange">
-      </div>
-      <div class="range-labels">
-        <p>not much light</p>
-        <p>lots of light</p>
+    <div class="cards-container">
+      <div class="form">
+        <%= simple_form_for [ @match ] do |f| %>
+            <%= f.input :q1, label: "what's your goal?", as: :radio_buttons,
+                collection_wrapper_tag: 'div',
+                collection_wrapper_class: 'q-cards',
+                item_wrapper_class: 'question-card',
+                input_html: { class: "category-selector" },
+                collection: [ "grow something edible", "grow something beautiful", "grow something unkillable", "grow something for fun"] %>
+        <div class="container">
+          <%= image_tag "hig-logo-plant.png", class: "q-logo" %>
+        </div>
+          <%= f.input :q2, label: "do you want to grow your plant indoors or outdoors in soil?",
+                as: :radio_buttons,
+                collection_wrapper_tag: 'div',
+                collection_wrapper_class: 'space-cards',
+                item_wrapper_class: 'q-card',
+                input_html: { class: "category-selector" },
+                collection: ["indoors", "outdoors", "don't mind"] %>
+          <div class="container">
+            <%= image_tag "hig-logo-plant.png", class: "q-logo" %>
+            <%= f.input :q3, label: "how much light does your new plant home get?", as: :range,
+            input_html: { min: 1, max: 5, steps: 1, value: 3, class: "slider", id: "myRange" }%>
+            <div class="range-labels">
+              <p>not much light</p>
+              <p>lots of light</p>
+          </div>
+        </div>
+        <div class="container d-flex justify-content-center pb-5">
+          <%= f.submit "Submit", class: "btn btn-main" %>
+        </div>
+            <%#= link_to suit_path(@suit), class:"btn btn-gray" do%>
+          <% end %>
       </div>
     </div>
-  </div>
-  <div class="container d-flex justify-content-center pb-5">
-    <%= link_to "get matched!", matches_path, class: "btn btn-main btn-landing" %>
   </div>
 </div>
