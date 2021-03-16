@@ -19,6 +19,7 @@
       <li> <%= image_tag "https://cdn2.iconfinder.com/data/icons/spring-30/30/Watering_Can-512.png", class: "q-logo" %> remember to  <span class="green"><%=  @user_plant.plant.watering.downcase%></span> </li>
       <li> <%= image_tag "https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-01-512.png", class: "q-logo" %> your time to shine! your plant needs <span class="green"><%=  @user_plant.plant.light.downcase%></span> </li>
     </ul>
+
     <div class="button_list d-flex">
       <%= link_to edit_user_plant_path, class: "btn btn-main" do%>
         <i class="fas fa-edit"></i><span> edit</span>
@@ -28,19 +29,15 @@
       <% end %>
     </div>
   </div>
-
   <div class="plant_image">
-    
-      <% @user_plant.photos.each do |photo| %>
-        <% if @user_plant.photos.count > 0  %>
-          <%= cl_image_tag photo.key, style: 'height: 300px' %>
+        <% if @user_plant.photos.first %>
+          <% @user_plant.photos.each do |p| %>
+            <%= cl_image_tag p.key, style: 'height: 300px' %>
+            <% end %>
         <% else %>
         <%= cl_image_tag @user_plant.plant.photo.key, style: 'height: 300px;' %>
       <% end %>
-    <% end %>
   </div>
-
-
 </div>
 <div class="plant_overview">
   <%= link_to plant_patch_path, class: "btn btn-grey btn-landing" do%>
