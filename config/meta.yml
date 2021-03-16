@@ -1,0 +1,5 @@
+meta_product_name: "How's It Growing?"
+meta_title: "How's It Growing? | Grow your plant patch from scratch!"
+meta_description: "Get matched with the perfect plant for you, and track it's growth in your Plant Patch!"
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@howsitgrowing"   # required for Twitter Cards
