@@ -7,17 +7,25 @@
 
   <div class="match-cards">
     <% @matches.each do |plant| %>
-      <div class="match-card" data-toggle="modal" data-target="#exampleModalCenter">
+      <div class="match-card" data-toggle="modal" data-target="#exampleModalCenter<%= plant.id %>">
         <%= image_tag cl_image_path plant.photo.key, height: 300, width: 300 %>
       <%#= cl_image_tag plant.photo.key, height: 300, width: 400, crop: :fill %>
         <div class="match-info">
-          <h3><%=  plant.name.downcase %><%#= link_to plant.name, plant_path(plant)%> </h3>
+          <div>
+            <h3><%=  plant.name.downcase %><%#= link_to plant.name, plant_path(plant)%> </h3>
+            <div class="badges">
+              <span class="badge badge-pill badge-primary"><%= plant.plant_watering_message.downcase %></span>
+              <span class="badge badge-pill badge-warning"><%= plant.plant_light_message.downcase %></span>
+              <span class="badge badge-pill badge-danger"><%= plant.pet_friendly ? "pet friendly" : "toxic for pets" %></span>
+            </div>
+
+          </div>
           <%= link_to "pick me!", user_plants_path(plant_id: plant.id), method: :post, class: "btn btn-light" %>
           <%#= root for link_to above: user_plants_path(plant_id: plant.id) points to create method in user_plants, passes the plant.is as plant_id in the () section%>
         </div>
       </div>
       <!-- Modal -->
-      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal fade" id="exampleModalCenter<%= plant.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
