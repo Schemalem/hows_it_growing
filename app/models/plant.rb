@@ -31,23 +31,23 @@ class Plant < ApplicationRecord
   end
   # helper_method :plant_watering_message
 
-  # def plant_light_message
-  #   if light.include? "Indirect light to dappled sun"
-  #     "Indirect light to dappled sun"
-  #   elsif light.include? "Low light to dappled sun"
-  #     "Low light to dappled sun"
-  #   elsif light.include? "Medium to bright, indirect light"
-  #     "Medium to bright, indirect light"
-  #   elsif light.include? "Medium indirect light to dappled sun"
-  #     "Medium indirect light to dappled sun"
-  #   elsif light.include?("Bright, indirect light to dappled sun" || "Bright indirect light to dappled sun")
-  #     "Bright, indirect light to dappled sun"
-  #   elsif light.include? "Bright, indirect light. Keep out of direct sunlight"
-  #     "Bright, indirect light. Keep out of direct sunlight."
-  #   elsif light.include?("Bright, indirect light" || "Bright, Indirect light")
-  #     "Bright, indirect light"
-  #   else "Bright, direct light"
-  #   end
-  # end
+  def plant_light_message
+    if light.include? "Indirect light to dappled sun"
+      "Indirect light to dappled sun"
+    elsif light.include? "Low light to dappled sun"
+      "Low light to dappled sun"
+    elsif light.include? "Medium to bright, indirect light"
+      "Medium to bright, indirect light"
+    elsif light.include? "Medium indirect light to dappled sun"
+      "Medium indirect light to dappled sun"
+    elsif light.include?("Bright, indirect light to dappled sun" || "Bright indirect light to dappled sun")
+      "Bright, indirect light to dappled sun"
+    elsif light.include? "Bright, indirect light. Keep out of direct sunlight"
+      "Bright, indirect light. Keep out of direct sunlight."
+    elsif light.include?("Bright, indirect light" || "Bright, Indirect light")
+      "Bright, indirect light"
+    else "Bright, direct light"
+    end
+  end
   # helper_method :plant_light_message
 end
