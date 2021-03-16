@@ -30,13 +30,13 @@
     </div>
   </div>
   <div class="plant_image">
-        <% if @user_plant.photos.first %>
-          <% @user_plant.photos.each do |p| %>
-            <%= cl_image_tag p.key, style: 'height: 300px' %>
-            <% end %>
-        <% else %>
-        <%= cl_image_tag @user_plant.plant.photo.key, style: 'height: 300px;' %>
+     <% if @user_plant.photos.first  %>
+      <% @user_plant.photos.each do |p| %>
+        <%= cl_image_tag p.key, style: 'height: 300px' %>
       <% end %>
+     <% else %>
+      <%= cl_image_tag @user_plant.plant.photo.key, style: 'height: 300px;' %>
+    <% end %>
   </div>
 </div>
 <div class="plant_overview">
