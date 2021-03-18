@@ -1,24 +1,19 @@
-<div class="q-module">
-  <h1> bloomin' heck that's a lot of plants </h1>
-</div>
-<div class="jumbotron">
-  <!-- <h1 class="display-4">Search for a specific plant</h1> -->
-  <p class="lead">search for your next BFF (best bud forever)</p>
-  <!-- <hr class="my-4"> -->
-  <!-- <p>It uses utility classes for typography and spacing to space content out within the larger container.</p> -->
-  <p class="lead">
-    <div class="search-module d-flex flex-column align-self-stretch">
-         <%= form_tag plants_path, method: :get, class: "d-flex" do %>
-           <%= text_field_tag :query,
-             params[:query],
-             class: "form-control",
-           placeholder: "find a plant"
-           %>
-           <%= submit_tag "go!", class: "btn btn-orange" %>
-         <% end %>
+
+<%= form_tag plants_path, method: :get do %>
+    <div class="flexbox">
+      <div class="search">
+      <h1> bloomin' heck that's a lot of plants </h1>
+        <div>
+          <%= text_field_tag :query,
+          params[:query], 
+          placeholder: "search our garden . . . . . . . . . "%> 
+        </div>
       </div>
-  </p>
-</div>
+      <%# <h3>find a plant</h3> %>
+    </div>
+    <%= submit_tag "", style: "display: none;" %>
+<% end %>
+
 <div class="q-module">
   <h3>browse our virtual garden</h3>
   <p>click on a plant to learn all about it </p>
