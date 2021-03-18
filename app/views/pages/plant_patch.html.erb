@@ -3,25 +3,27 @@
     <h2> your plant patch </h2>
     <%= image_tag "hig-logo-plant.png", class: "q-logo" %>
   </div>
-  <div class="q-cards">
-    <% @my_plants.each do |my_plant| %>
-      <%= link_to user_plant_path(my_plant) do %>
-      <div class="q-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path my_plant.plant.photo.key %>')">
-        <%#= link_to "here", user_plant_path(my_plant), class: "btn btn-main" %>
-        <div>
+  <div class="container-fluid">
+    <div class="q-cards">
+      <% @my_plants.each do |my_plant| %>
+        <%= link_to user_plant_path(my_plant) do %>
+        <div class="q-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path my_plant.plant.photo.key %>')">
+          <%#= link_to "here", user_plant_path(my_plant), class: "btn btn-main" %>
           <div>
-            <h4 id="plant-name"><%= my_plant.plant.name.downcase %></h4>
-          </div>
-          <div class="badges">
-            <span class="badge rounded-pill bg-success">started growing: <%= my_plant.start_date %></span>
-            <span class="badge rounded-pill bg-light text-dark"> this plant is <%= my_plant.size %> inches</span>
-            <span class="badge badge-pill badge-primary"><%= my_plant.plant.plant_watering_message.downcase %></span>
-            <span class="badge badge-pill badge-warning"><%= my_plant.plant.plant_light_message.downcase %></span>
+            <div>
+              <h4 id="plant-name"><%= my_plant.plant.name.downcase %></h4>
+            </div>
+            <div class="badges">
+              <span class="badge rounded-pill bg-success">started growing: <%= my_plant.start_date %></span>
+              <span class="badge rounded-pill bg-light text-dark"> this plant is <%= my_plant.size %> inches</span>
+              <span class="badge badge-pill badge-primary"><%= my_plant.plant.plant_watering_message.downcase %></span>
+              <span class="badge badge-pill badge-warning"><%= my_plant.plant.plant_light_message.downcase %></span>
+            </div>
           </div>
         </div>
-      </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
 
