@@ -4,7 +4,7 @@
       <h2> lettuce get started... </h2>
       <%= image_tag "hig-logo-plant.png", class: "q-logo" %>
     </div>
-    <div class="cards-container">
+    <div class="container-fluid">
       <div class="form">
         <%= simple_form_for [ @match ] do |f| %>
             <%= f.input :q1, label: "what's your goal?", as: :radio_buttons,
