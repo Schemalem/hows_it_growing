@@ -45,7 +45,10 @@
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://images.pexels.com/photos/6231753/pexels-photo-6231753.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
 }
 .category-selector:checked + label {
-  border: 7px solid #83C685 !important;
+}
+
+.greyed-out {
+  opacity: 0.7;
 }
 // #snippet_category_ruby + label {
 //   color: #FD1015;

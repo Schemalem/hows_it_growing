@@ -32,4 +32,12 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  document.querySelectorAll(".form-check-label").forEach(label => {
+    label.addEventListener("click", (event) => {
+      event.currentTarget.closest(".q-cards").querySelectorAll(".form-check-label").forEach(box => {
+        box.classList.add("greyed-out")
+      })
+      event.currentTarget.classList.remove("greyed-out")
+    })
+  })
 });
