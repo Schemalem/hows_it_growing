@@ -11,7 +11,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px 5px;
-  align-items: center;
+  //align-items: center;
 }
 
 @media(max-width: 1000px) {
@@ -25,6 +25,7 @@
   position: relative;
   order: 1;
   justify-content: left;
+  top: 0;
 }
 
 .right-column {
@@ -58,10 +59,15 @@
   border-radius: 6px;
   padding: 8px;
   padding-top: 16px;
-}
 
-ul {
+  ul {
   list-style-type: none;
+  list-style-position: outside;
   margin: 0;
   padding: 0;
+  margin-left: 2em;
+  text-indent: -2em
+ }
 }
+
+
