@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px 5px;
-  height: calc(100vh - 161px);
+  //height: calc(100vh - 161px);
   overflow: hidden;
 }
 
@@ -15,10 +15,10 @@
 }
 
 .plant_features {
-  padding: 50px;
+  padding: 20px 50px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   position: relative;
 
   h2 {
@@ -30,7 +30,12 @@
     top: 8px;
     left: 24px;
     color: $l-yellow;
+
+    &:hover {
+      color: $yellow;
+    }
   }
+
 }
 
 .plant_features ul {

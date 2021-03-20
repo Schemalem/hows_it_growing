@@ -1,35 +1,40 @@
-<div class="q-module">
-
-</div>
 
 <div class="plant_overview">
   <div class="plant_features">
     <h2> how's your <strong><%=  @user_plant.plant.name.downcase %> </strong> growing?</h2>
-    <ul>
-      <% if @user_plant.start_date.nil? %>
-        <li> <%= image_tag "https://cdn0.iconfinder.com/data/icons/business-management-3-4/256/m-04-512.png", class: "q-logo" %>it looks like you haven't started growing this yet! </li>
-      <% else %>
-        <li> <%= image_tag "https://cdn0.iconfinder.com/data/icons/business-management-3-4/256/m-04-512.png", class: "q-logo" %> you've been growing this plant since <strong><%= @user_plant.start_date %></strong></li>
-      <% end %>
-      <% if @user_plant.size.nil? %>
-        <li> <%= image_tag "https://cdn1.iconfinder.com/data/icons/construction-tool-line-foreman-equipment/512/Measuring_tape-512.png", class: "q-logo" %> it looks like you haven't added a measurement yet! </li>
-      <% else %>
-        <li> <%= image_tag "https://cdn1.iconfinder.com/data/icons/construction-tool-line-foreman-equipment/512/Measuring_tape-512.png", class: "q-logo" %> last time we checked, your plant was <strong><%= @user_plant.size %> inches tall</strong></li>
-      <% end %>
-      <li> <%= image_tag "https://cdn2.iconfinder.com/data/icons/spring-31/30/Watering_Can-512.png", class: "q-logo" %> remember to  <strong><%=  @user_plant.plant.watering.downcase%></strong> </li>
-      <li> <%= image_tag "https://cdn3.iconfinder.com/data/icons/sympletts-free-sampler/128/sun-512.png", class: "q-logo" %> your time to shine! your plant needs <strong><%=  @user_plant.plant.light.downcase%></strong> </li>
-    </ul>
+    <div class="plant-features-list mt-3">
+      <ul>
+        <% if @user_plant.start_date.nil? %>
+          <li> <%= image_tag "https://cdn0.iconfinder.com/data/icons/business-management-3-4/256/m-04-512.png", class: "q-logo" %>it looks like you haven't started growing this yet! </li>
+        <% else %>
+          <li> <%= image_tag "https://cdn0.iconfinder.com/data/icons/business-management-3-4/256/m-04-512.png", class: "q-logo" %> you've been growing this plant since <strong><%= @user_plant.start_date %></strong></li>
+        <% end %>
+        <% if @user_plant.size.nil? %>
+          <li> <%= image_tag "https://cdn1.iconfinder.com/data/icons/construction-tool-line-foreman-equipment/512/Measuring_tape-512.png", class: "q-logo" %> it looks like you haven't added a measurement yet! </li>
+        <% else %>
+          <li> <%= image_tag "https://cdn1.iconfinder.com/data/icons/construction-tool-line-foreman-equipment/512/Measuring_tape-512.png", class: "q-logo" %> last time we checked, your plant was <strong><%= @user_plant.size %> inches tall</strong></li>
+        <% end %>
+        <li> <%= image_tag "https://cdn2.iconfinder.com/data/icons/spring-31/30/Watering_Can-512.png", class: "q-logo" %> remember to  <strong><%=  @user_plant.plant.watering.downcase%></strong> </li>
+        <li> <%= image_tag "https://cdn3.iconfinder.com/data/icons/sympletts-free-sampler/128/sun-512.png", class: "q-logo" %> your time to shine! your plant needs <strong><%=  @user_plant.plant.light.downcase%></strong> </li>
+      </ul>
+    </div>
     <!-- buttons -->
-    <div class="button_list d-flex pt-2">
+    <div class="button_list d-flex">
       <%= link_to edit_user_plant_path, class: "btn btn-light mr-2" do%>
         <i class="fas fa-edit"></i><span> edit</span>
       <% end %>
       <%= link_to user_plant_path(@user_plant), method: :delete, data: { confirm: 'Are you sure you want to kill your plant?' }, class: "btn btn-grey" do%>
         <i class="fas fa-trash-alt"></i><span> delete</span>
       <% end %>
+      <!-- back -->
       <%= link_to plant_patch_path do%>
-    <i class="fas fa-arrow-circle-left back-icon"></i>
-  <% end %>
+        <i class="fas fa-arrow-circle-left back-icon"></i>
+      <% end %>
+    </div>
+
+    <div class="plant_feature mt-2">
+      <h4 class="pl-2 pb-2">about this plant</h4>
+      <p class="pl-2"><%= @user_plant.plant.description %></p>
     </div>
   </div>
   <!-- image -->
