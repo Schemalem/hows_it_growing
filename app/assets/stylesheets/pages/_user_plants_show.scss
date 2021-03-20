@@ -1,31 +1,53 @@
-.plant_features ul {
-
-  list-style-type: none;
-  padding-left: 0;
-
-}
-
-.plant_features h3 {
-
-  color: $green;
-
-}
-
 .plant_overview {
-
-  margin: auto;
-  width: 80%;
   color: $navy;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px 5px;
-  align-items: center;
-  //background-color: $light-gray;
+  height: calc(100vh - 161px);
+  overflow: hidden;
 }
 
 @media(max-width: 900px) {
   .plant_overview {
    grid-template-columns: 1fr;
+   height: auto;
+  }
+}
+
+.plant_features {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+
+  h2 {
+    margin-bottom: 0px;
+  }
+
+  .back-icon {
+    position: absolute;
+    top: 8px;
+    left: 24px;
+    color: $l-yellow;
+  }
+}
+
+.plant_features ul {
+  list-style-type: none;
+  text-indent: -3em
+}
+
+.plant_image {
+  // border-radius: 2px;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // margin: 8px;
+  //width: auto;
+
+  img {
+    height: calc(100vh - 161px);
+    width: 100%;
+    object-fit: cover;
   }
 }
 
