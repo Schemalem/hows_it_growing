@@ -37,6 +37,9 @@ document.addEventListener('turbolinks:load', () => {
       event.currentTarget.closest(".q-cards").querySelectorAll(".form-check-label").forEach(box => {
         box.classList.add("greyed-out")
       })
+      event.currentTarget.closest(".space-cards").querySelectorAll(".form-check-label").forEach(box => {
+        box.classList.add("greyed-out")
+      })
       event.currentTarget.classList.remove("greyed-out")
     })
   })
