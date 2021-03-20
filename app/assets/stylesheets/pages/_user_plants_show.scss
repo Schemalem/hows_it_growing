@@ -4,11 +4,13 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px 5px;
   height: calc(100vh - 161px);
+  overflow: hidden;
 }
 
 @media(max-width: 900px) {
   .plant_overview {
    grid-template-columns: 1fr;
+   height: auto;
   }
 }
 
@@ -43,7 +45,7 @@
   //width: auto;
 
   img {
-    height: 100%;
+    height: calc(100vh - 161px);
     width: 100%;
     object-fit: cover;
   }
