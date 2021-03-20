@@ -16,7 +16,7 @@
 }
 
 .plant_features {
-  padding: 20px 35px;
+  padding: 0px 35px 20px 35px;
   display: flex;
   flex-direction: column;
   //justify-content: space-evenly;
@@ -24,7 +24,7 @@
 
   h2 {
     margin-bottom: 0px;
-    padding: 15px 0px;
+    padding-bottom: 15px;
     padding-left: 20px;
     //text-align: center;
   }
@@ -74,4 +74,7 @@
   margin-left: 20px;
 }
 
+.up_feature_colour {
+ background-color: $l-yellow;
+}
 

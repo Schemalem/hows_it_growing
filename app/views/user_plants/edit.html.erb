@@ -1,11 +1,13 @@
 <div class="container">
-  <h2>Update your <%= @user_plant.plant.name.downcase%></h2>
+  <div class="title-module">
+    <h2>update your <strong><%= @user_plant.plant.name.downcase%></strong></h2>
+  </div>
   <div class="form">
     <%= simple_form_for [ @user_plant ] do |f| %>
       <%= f.input :start_date, as: :date, html5: true %>
       <%= f.input :size, placeholder: "in inches" %>
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-      <%= f.submit "Submit", class: "btn btn-main" %>
+      <%= f.submit "update!", class: "btn btn-main" %>
     <% end %>
   </div>
 </div>
