@@ -20,16 +20,19 @@
                 input_html: { autocomplete: "current-password" } %>
             </div>
             <div class="form-actions">
-              <%= f.button :submit, "Log in", class: "login-btn" %>
+              <%= f.button :submit, "log in", class: "login-btn" %>
               <% end %>
             </div>
             <p  class="login-wrapper-footer-text"> <%= image_tag "https://cdn2.iconfinder.com/data/icons/farm-agriculture/64/plant_farming_agriculture_ecology_nature_growing_eco-256.png", class: "q-logo" %>don't have an account?<strong>
             <%= link_to 'sign up', new_user_registration_path, class: "text-reset" %></strong> </p>
       </div>
     </div>
-    <div class="col-sm-6 px-0 d-none d-sm-block" style:>
+    <div class="col-sm-6 px-0 d-none d-sm-block">
       <%= image_tag "leaf.jpeg", class: "login-img" %>
-      <h4><span>aloe there,new friend</span></h4>
-    </div>
+        <div class="text-block">
+          <h5>aloe there,</h5>
+          <h5>new friend</h5>
+          <h4>well come back to your plant patch</h4>
+        </div>
   </div>
 </div>

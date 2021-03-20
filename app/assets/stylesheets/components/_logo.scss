@@ -3,13 +3,12 @@
 //     background-color: #fff;
 //     min-height: 100vh;
 // }
-
 .brand-wrapper {
     padding-top: 7px;
     padding-bottom: 8px;
 
     .logo {
-        height: 90px;
+        height: 70px;
     }
 }
 
@@ -25,7 +24,7 @@
     &-section-wrapper {
         display: flex;
         flex-direction: column;
-        padding: 68px 100px;
+        padding: 68px 150px;
         background-color: #fff;
 
         @media (max-width: 991px) {
@@ -91,8 +90,8 @@
             font-size: 18px;
             // text-align: center;
             color: #000;
-            margin-top: 40px;
-            margin-bottom: 0;
+            margin-top: 50px;
+            margin-bottom: 150px;
         }
     }
 
@@ -101,6 +100,7 @@
         color: #000;
         font-weight: bold;
         margin-bottom: 25px;
+        text-align: center;
     }
 
     &-img {
@@ -112,12 +112,20 @@
     }
 }
 
-h4 { 
-    position: absolute; 
-    text-align: center;
-    top: 200px; 
-    left: 0; 
-    width: 100%; 
+
+
+.text-block {
+    position: absolute;
+    bottom: 520px;
+    right: 320px;
+    background: transparent;
     color: white;
-    font-size: 80px;
- }
+    padding-left: 30px;
+    padding-right: 30px;
+    display: block;
+  }
+
+  h5{
+    font-size: 85px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
