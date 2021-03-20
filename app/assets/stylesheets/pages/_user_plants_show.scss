@@ -3,7 +3,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px 5px;
-  //height: calc(100vh - 161px);
+  min-height: calc(100vh - 151px);
+  //height: 100%;
   overflow: hidden;
 }
 
@@ -15,14 +16,22 @@
 }
 
 .plant_features {
-  padding: 20px 50px;
+  padding: 0px 35px 20px 35px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  //justify-content: space-evenly;
   position: relative;
 
   h2 {
     margin-bottom: 0px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    //text-align: center;
+  }
+
+  ul {
+  list-style-type: none;
+  text-indent: -3em;
   }
 
   .back-icon {
@@ -35,12 +44,10 @@
       color: $yellow;
     }
   }
-
 }
 
-.plant_features ul {
-  list-style-type: none;
-  text-indent: -3em
+.plant-features-list {
+  margin-left: 30px;
 }
 
 .plant_image {
@@ -48,11 +55,26 @@
   // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   // margin: 8px;
   //width: auto;
+  height: 100%;
 
   img {
-    height: calc(100vh - 161px);
+   // height: calc(100vh - 151px);
+    height: 100%;
     width: 100%;
     object-fit: cover;
+    object-position: center;
   }
+}
+
+.carousel-item, .carousel-inner, .carousel {
+  height: 100%
+}
+
+.button_list {
+  margin-left: 20px;
+}
+
+.up_feature_colour {
+ background-color: $l-yellow;
 }
 

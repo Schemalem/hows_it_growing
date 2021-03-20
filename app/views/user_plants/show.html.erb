@@ -1,25 +1,28 @@
-
+<div class="q-module">
+  <h2> your plants will always <strong>beleaf</strong> in you!</h2>
+      <%= image_tag "hig-logo-plant.png", class: "q-logo" %>
+</div>
 <div class="plant_overview">
   <div class="plant_features">
     <h2> how's your <strong><%=  @user_plant.plant.name.downcase %> </strong> growing?</h2>
     <div class="plant-features-list mt-3">
       <ul>
         <% if @user_plant.start_date.nil? %>
-          <li> <%= image_tag "https://cdn0.iconfinder.com/data/icons/business-management-3-4/256/m-04-512.png", class: "q-logo" %>it looks like you haven't started growing this yet! </li>
+          <li> <%= image_tag "https://cdn0.iconfinder.com/data/icons/business-management-3-4/256/m-04-512.png", class: "q-logo mr-2" %>it looks like you haven't started growing this yet! </li>
         <% else %>
-          <li> <%= image_tag "https://cdn0.iconfinder.com/data/icons/business-management-3-4/256/m-04-512.png", class: "q-logo" %> you've been growing this plant since <strong><%= @user_plant.start_date %></strong></li>
+          <li> <%= image_tag "https://cdn0.iconfinder.com/data/icons/business-management-3-4/256/m-04-512.png", class: "q-logo mr-2" %> you've been growing this plant since <strong><%= @user_plant.start_date.strftime("%d/%m/%Y") %></strong></li>
         <% end %>
         <% if @user_plant.size.nil? %>
-          <li> <%= image_tag "https://cdn1.iconfinder.com/data/icons/construction-tool-line-foreman-equipment/512/Measuring_tape-512.png", class: "q-logo" %> it looks like you haven't added a measurement yet! </li>
+          <li> <%= image_tag "https://cdn1.iconfinder.com/data/icons/construction-tool-line-foreman-equipment/512/Measuring_tape-512.png", class: "q-logo mr-2" %> it looks like you haven't added a measurement yet! </li>
         <% else %>
-          <li> <%= image_tag "https://cdn1.iconfinder.com/data/icons/construction-tool-line-foreman-equipment/512/Measuring_tape-512.png", class: "q-logo" %> last time we checked, your plant was <strong><%= @user_plant.size %> inches tall</strong></li>
+          <li> <%= image_tag "https://cdn1.iconfinder.com/data/icons/construction-tool-line-foreman-equipment/512/Measuring_tape-512.png", class: "q-logo mr-2" %> last time we checked, your plant was <strong><%= @user_plant.size %> inches tall</strong></li>
         <% end %>
-        <li> <%= image_tag "https://cdn2.iconfinder.com/data/icons/spring-31/30/Watering_Can-512.png", class: "q-logo" %> remember to  <strong><%=  @user_plant.plant.watering.downcase%></strong> </li>
-        <li> <%= image_tag "https://cdn3.iconfinder.com/data/icons/sympletts-free-sampler/128/sun-512.png", class: "q-logo" %> your time to shine! your plant needs <strong><%=  @user_plant.plant.light.downcase%></strong> </li>
+        <li> <%= image_tag "https://cdn2.iconfinder.com/data/icons/spring-31/30/Watering_Can-512.png", class: "q-logo mr-2" %> remember to  <strong><%=  @user_plant.plant.watering.downcase%></strong> </li>
+        <li> <%= image_tag "https://cdn3.iconfinder.com/data/icons/sympletts-free-sampler/128/sun-512.png", class: "q-logo mr-2" %> your time to shine! your plant needs <strong><%=  @user_plant.plant.light.downcase%></strong> </li>
       </ul>
     </div>
     <!-- buttons -->
-    <div class="button_list d-flex">
+    <div class="button_list d-flex pb-2">
       <%= link_to edit_user_plant_path, class: "btn btn-light mr-2" do%>
         <i class="fas fa-edit"></i><span> edit</span>
       <% end %>
@@ -32,19 +35,43 @@
       <% end %>
     </div>
 
-    <div class="plant_feature mt-2">
+    <div class="plant_feature up_feature_colour mt-3 ml-3">
       <h4 class="pl-2 pb-2">about this plant</h4>
-      <p class="pl-2"><%= @user_plant.plant.description %></p>
+      <p class="pl-2 pr-2"><%= @user_plant.plant.description %></p>
     </div>
   </div>
   <!-- image -->
+
   <div class="plant_image">
-     <% if @user_plant.photos.first  %>
-      <% @user_plant.photos.each do |p| %>
-        <%= cl_image_tag p.key %>
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <% if @user_plant.photos.first  %>
+        <div class="carousel-inner">
+          <% @user_plant.photos.each_with_index do |p, index| %>
+            <% if index == 0 %>
+              <div class="carousel-item active">
+                <%= cl_image_tag p.key %>
+              </div>
+            <% else %>
+              <div class="carousel-item">
+                <%= cl_image_tag p.key %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+
+      <!-- no user image, default plant image -->
+       <% else %>
+          <%= cl_image_tag @user_plant.plant.photo.key %>
       <% end %>
-     <% else %>
-      <%= cl_image_tag @user_plant.plant.photo.key %>
-    <% end %>
+
+    </div>
   </div>
 </div>
