@@ -32,15 +32,42 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  document.querySelectorAll(".form-check-label").forEach(label => {
+  document.querySelectorAll(".radio-button").forEach(label => {
     label.addEventListener("click", (event) => {
-      event.currentTarget.closest(".q-cards").querySelectorAll(".form-check-label").forEach(box => {
-        box.classList.add("greyed-out")
-      })
-      event.currentTarget.closest(".space-cards").querySelectorAll(".form-check-label").forEach(box => {
-        box.classList.add("greyed-out")
-      })
-      event.currentTarget.classList.remove("greyed-out")
+      event.stopPropagation()
+      if (event.currentTarget.classList.contains("question-card")) {
+        const selected = document.getElementsByClassName("question-card radio-button selected")
+        if (selected.length > 0) {
+          selected[0].classList.remove("selected")
+        }
+        document.querySelectorAll(".question-card.radio-button").forEach(element => {
+          element.classList.add("unselected")
+
+        })
+      }
+      if (event.currentTarget.classList.contains("q-card")) {
+        const selected = document.getElementsByClassName("q-card radio-button selected")
+        if (selected.length > 0) {
+          selected[0].classList.remove("selected")
+        }
+        document.querySelectorAll(".q-card.radio-button").forEach(element => {
+          element.classList.add("unselected")
+
+        })
+      }
+      event.currentTarget.classList.add("selected")
     })
   })
+
+  // document.querySelectorAll(".form-check-label").forEach(label => {
+    // label.addEventListener("click", (event) => {
+    //   event.currentTarget.closest(".q-cards").querySelectorAll(".form-check-label").forEach(box => {
+    //     box.classList.add("greyed-out")
+    //   })
+      // event.currentTarget.closest(".space-cards").querySelectorAll(".form-check-label").forEach(box => {
+      //   box.classList.add("greyed-out")
+      // })
+  //     event.currentTarget.classList.remove("greyed-out")
+  //   })
+  // })
 });
