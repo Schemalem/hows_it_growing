@@ -1,23 +1,32 @@
 .badges {
+  .badge-light{
+    color: #474748;
+    border: solid 1px #373738;
+  }
+
+  img {
+    height: 20px;
+  }
+
   // text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
-  .badge-warning {
-    background-color: #ffc107;
-      // min-width: 0;
-      // min-height: 0;
-      word-wrap: break-word;
-      word-break: break-all;
-      max-width: 100%;
-  }
+  // .badge-warning {
+  //   background-color: #ffc107;
+  //     // min-width: 0;
+  //     // min-height: 0;
+  //     word-wrap: break-word;
+  //     word-break: break-all;
+  //     max-width: 100%;
+  // }
 
-  .badge-primary {
-    background-color: #18a2b8;
-  }
+  // .badge-primary {
+  //   background-color: #18a2b8;
+  // }
 
-  .badge {
-    white-space: inherit;
-  }
-  .bg-success {
-      background-color: #198754 !important;
-    }
+  // .badge {
+  //   white-space: inherit;
+  // }
+  // .bg-success {
+  //     background-color: #198754 !important;
+  //   }
 }
 

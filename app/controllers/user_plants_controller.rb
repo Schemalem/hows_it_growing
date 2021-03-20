@@ -1,5 +1,4 @@
 class UserPlantsController < ApplicationController
-
   def index
     @user_plants = UserPlant.all
   end
@@ -37,7 +36,7 @@ class UserPlantsController < ApplicationController
   def update
     @user_plant = UserPlant.find(params[:id])
     if @user_plant.update(user_plant_params)
-      redirect_to @user_plant, notice: 'Your plant was successfully updated 🌱'
+      redirect_to @user_plant, notice: "good chives only. your plant was successfully updated 🌱"
     else
       render :edit
     end
@@ -47,7 +46,7 @@ class UserPlantsController < ApplicationController
     @plant_patch =
     @user_plant = UserPlant.find(params[:id])
     @user_plant.destroy
-    redirect_to plant_patch_path, notice: 'You killed your plant ☠️'
+    redirect_to plant_patch_path, notice: 'everyone romain calm. you killed your plant ☠️'
   end
 
   private

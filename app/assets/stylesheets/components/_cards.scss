@@ -189,7 +189,6 @@ img.responsive { width: 200px; height: 250px; }
   &:focus {
     box-shadow: 0 0 15px $green;
   }
-
 }
 
 .radio-button {
@@ -198,5 +197,14 @@ img.responsive { width: 200px; height: 250px; }
   }
   &.unselected {
     opacity: 0.6;
+  }
+}
+
+#plant-card {
+  max-width: 300px;
+  flex-direction: column;
+  justify-content: space-between;
+  .badges {
+    margin-bottom: 4px;
   }
 }

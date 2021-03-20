@@ -1,12 +1,11 @@
-
 <%= form_tag plants_path, method: :get do %>
     <div class="flexbox">
       <div class="search">
       <h1> bloomin' heck that's a lot of plants </h1>
         <div>
           <%= text_field_tag :query,
-          params[:query], 
-          placeholder: "search our garden . . . . . . . . . "%> 
+          params[:query],
+          placeholder: "search our garden . . . . . . . . . "%>
         </div>
       </div>
       <%# <h3>find a plant</h3> %>
@@ -22,24 +21,19 @@
   <div class="q-cards">
     <% @plants.each do |plant| %>
       <%= link_to plant do %>
-         <div class="q-card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path plant.photo.key %>')">
-          <%# if plant.photo.attached? %>
-              <!-- <div class=""> -->
-                <%#= cl_image_tag plant.photo.key %>
-            <div>
-              <div>
+         <div class="q-card" id="plant-card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path plant.photo.key %>')">
+              <div></div>
+              <div class="plant-name">
                 <h4 id="plant-name"><%= plant.name.downcase %></h4>
               </div>
               <div class="badges">
-              <span class="badge badge-pill badge-primary"><%= plant.plant_watering_message.downcase %></span>
-              <span class="badge badge-pill badge-warning"><%= plant.plant_light_message.downcase %></span>
-              <span class="badge badge-pill badge-secondary"><%= plant.space.downcase %></span>
-              <span class="badge badge-pill badge-danger"><%= plant.pet_friendly ? "pet friendly" : "toxic for pets" %></span>
-            </div>
+                <span class="badge badge-pill badge-light"><%= image_tag "https://cdn3.iconfinder.com/data/icons/sympletts-free-sampler/128/sun-512.png", class: "q-logo" %> <%= plant.light.downcase %></span>
+                <span class="badge badge-pill badge-light"> <%= image_tag "https://cdn2.iconfinder.com/data/icons/spring-31/30/Watering_Can-512.png", class: "q-logo" %><%= plant.plant_watering_message.downcase %></span>
+                <!-- <span class="badge badge-pill badge-secondary"><%= plant.space.downcase %></span>
+                <span class="badge badge-pill badge-danger"><%= plant.pet_friendly ? "pet friendly" : "toxic for pets" %></span> -->
+              </div>
           </div>
-        </div>
       <% end %>
     <% end %>
   </div>
-
 </div>

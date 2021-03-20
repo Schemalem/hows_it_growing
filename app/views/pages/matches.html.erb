@@ -7,18 +7,20 @@
   <div class="container-fluid">
     <div class="match-cards">
       <% @matches.each do |plant| %>
-        <div class="match-card" data-toggle="modal" data-target="#exampleModalCenter<%= plant.id %>">
-          <%= image_tag cl_image_path plant.photo.key, height: 300, width: 300 %>
+        <div class="match-card">
+          <div class="matched-plant-pic" data-toggle="modal" data-target="#exampleModalCenter<%= plant.id %>">
+            <%= image_tag cl_image_path plant.photo.key, height: 300, width: 300 %>
+          </div>
         <%#= cl_image_tag plant.photo.key, height: 300, width: 400, crop: :fill %>
           <div class="match-info">
             <div>
               <h3><%=  plant.name.downcase %><%#= link_to plant.name, plant_path(plant)%> </h3>
-              <div class="badges">
+              <!-- <div class="badges">
                 <span class="badge badge-pill badge-primary"><%= plant.plant_watering_message.downcase %></span>
-                <span class="badge badge-pill badge-warning"><%= plant.plant_light_message.downcase %></span>
+                <span class="badge badge-pill badge-warning"><%= plant.light.downcase %></span>
                 <span class="badge badge-pill badge-danger"><%= plant.pet_friendly ? "pet friendly" : "toxic for pets" %></span>
               </div>
-
+ -->
             </div>
             <%= link_to "pick me!", user_plants_path(plant_id: plant.id), method: :post, class: "btn btn-light" %>
             <%#= root for link_to above: user_plants_path(plant_id: plant.id) points to create method in user_plants, passes the plant.is as plant_id in the () section%>
@@ -35,12 +37,17 @@
                 </button>
               </div>
               <div class="modal-body">
-                <p> <%= plant.description %> </p>
+                <p> <%= plant.description.downcase %> </p>
+              </div>
+              <div class="badges">
+                <span class="badge badge-pill badge-light"><%= image_tag "https://cdn3.iconfinder.com/data/icons/sympletts-free-sampler/128/sun-512.png", class: "q-logo" %> <%= plant.light.downcase %></span>
+                <span class="badge badge-pill badge-light"> <%= image_tag "https://cdn2.iconfinder.com/data/icons/spring-31/30/Watering_Can-512.png", class: "q-logo" %><%= plant.plant_watering_message.downcase %></span>
+                <span class="badge badge-pill badge-light"> <%= image_tag "https://cdn3.iconfinder.com/data/icons/sympletts-free-sampler/128/sun-512.png", class: "q-logo" %><%= plant.space.downcase %> plant</span>
+                <span class="badge badge-pill badge-light"> <%= image_tag "https://cdn3.iconfinder.com/data/icons/sympletts-free-sampler/128/sun-512.png", class: "q-logo" %> <%= plant.pet_friendly ? "pet friendly" : "toxic for pets" %></span>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-light" data-dismiss="modal">close</button>
-                <%= link_to "pick me!", user_plants_path(plant_id: plant.id), method: :post, class: "btn btn-main
-                " %>
+                <%= link_to "pick me!", user_plants_path(plant_id: plant.id), method: :post, class: "btn btn-main" %>
+                <button type="button" class="btn btn-grey" data-dismiss="modal">close</button>
               </div>
             </div>
           </div>
