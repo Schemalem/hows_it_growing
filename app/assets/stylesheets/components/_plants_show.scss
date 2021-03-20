@@ -18,7 +18,7 @@
 
 }
 
-@media(max-width: 900px) {
+@media(max-width: 850px) {
   .info-container {
    grid-template-columns: 1fr;
    height: auto;
@@ -59,7 +59,7 @@
   border-radius: 6px;
   padding: 8px;
   padding-top: 16px;
-
+  margin-bottom: 10px;
   ul {
   list-style-type: none;
   list-style-position: outside;
@@ -72,11 +72,21 @@
 
 .right-column {
   order: 2;
-  padding: 5px 30px;
+  padding: 5px 35px;
   display: flex;
   flex-direction: column;
   // justify-content: space-evenly;
   position: relative;
+
+  h2 {
+    font-weight: bolder;
+    //text-align: center;
+  }
+
+  p {
+    padding-right: 15px;
+    //text-align: center;
+  }
 }
 
 

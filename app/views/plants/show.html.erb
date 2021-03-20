@@ -1,5 +1,5 @@
 <div class="q-module">
-  <h2> Someone has been adding soil to my garden. The plot thickens.... </h2>
+  <h2> we beleaf this plant will brighten your day </h2>
       <%= image_tag "hig-logo-plant.png", class: "q-logo" %>
 </div>
 
@@ -9,7 +9,7 @@
     <div class="left-column img">
       <%= cl_image_tag @plant.photo.key %>
     </div>
-    <%= link_to plant_patch_path do%>
+    <%= link_to plants_path do%>
       <i class="fas fa-arrow-circle-left back-icon"></i>
     <% end %>
   </div>
@@ -17,9 +17,11 @@
   <div class="right-column">
     <!-- Product Description -->
     <div class="product-description">
-      <h1><%= @plant.name.downcase %></h1>
+      <h2><%= @plant.name.downcase %></h2>
       <p><%= @plant.description %></p>
-      <%= link_to "add me to your patch", user_plants_path(plant_id: @plant.id), method: :post, class: "btn btn-light mb-2 w-50" %>
+      <div class="d-flex mb-3">
+        <%= link_to "add me to your patch", user_plants_path(plant_id: @plant.id), method: :post, class: "btn btn-light mb-2 w-50" %>
+      </div>
     </div>
     <!-- Product Configuration -->
     <div class="plant_feature">

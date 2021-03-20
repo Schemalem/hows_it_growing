@@ -16,7 +16,7 @@
 }
 
 .plant_features {
-  padding: 20px 50px;
+  padding: 20px 35px;
   display: flex;
   flex-direction: column;
   //justify-content: space-evenly;
@@ -24,6 +24,14 @@
 
   h2 {
     margin-bottom: 0px;
+    padding: 15px 0px;
+    padding-left: 20px;
+    //text-align: center;
+  }
+
+  ul {
+  list-style-type: none;
+  text-indent: -3em;
   }
 
   .back-icon {
@@ -36,12 +44,10 @@
       color: $yellow;
     }
   }
-
 }
 
-.plant_features ul {
-  list-style-type: none;
-  text-indent: -3em
+.plant-features-list {
+  margin-left: 30px;
 }
 
 .plant_image {
@@ -64,5 +70,8 @@
   height: 100%
 }
 
+.button_list {
+  margin-left: 20px;
+}
 
 
