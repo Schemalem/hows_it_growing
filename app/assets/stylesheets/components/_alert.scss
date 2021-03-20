@@ -1,6 +1,9 @@
 .alert {
   position: fixed;
-  bottom: 16px;
-  right: 16px;
+  right: 0px;
+  top: 56px;
   z-index: 1000;
+  background-image: linear-gradient(to right, #517956 0%, #517956  61%, $green  100%);
+  color: white;
+  border-radius: 10px;
 }

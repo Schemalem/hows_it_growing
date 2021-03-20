@@ -62,7 +62,7 @@
             min-height: 40px;
             font-size: 18px;
             font-weight: normal;
-    
+
             &::placeholder {
                 color: #b0adad;
             }
@@ -78,7 +78,7 @@
             display: block;
             width: 100%;
 
-          
+
             &:hover {
                 background-position: center; /* change the direction of the change here */
                 color: #fff;
@@ -123,9 +123,10 @@
     padding-left: 30px;
     padding-right: 30px;
     display: block;
+
+    h5 {
+      font-size: 85px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    }
   }
 
-  h5{
-    font-size: 85px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  }

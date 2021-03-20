@@ -42,8 +42,8 @@
               <div class="badges">
                 <span class="badge badge-pill badge-light"><%= image_tag "https://cdn3.iconfinder.com/data/icons/sympletts-free-sampler/128/sun-512.png", class: "q-logo" %> <%= plant.light.downcase %></span>
                 <span class="badge badge-pill badge-light"> <%= image_tag "https://cdn2.iconfinder.com/data/icons/spring-31/30/Watering_Can-512.png", class: "q-logo" %><%= plant.plant_watering_message.downcase %></span>
-                <span class="badge badge-pill badge-light"> <%= image_tag "https://cdn3.iconfinder.com/data/icons/sympletts-free-sampler/128/sun-512.png", class: "q-logo" %><%= plant.space.downcase %> plant</span>
-                <span class="badge badge-pill badge-light"> <%= image_tag "https://cdn3.iconfinder.com/data/icons/sympletts-free-sampler/128/sun-512.png", class: "q-logo" %> <%= plant.pet_friendly ? "pet friendly" : "toxic for pets" %></span>
+                <span class="badge badge-pill badge-light"> <%= image_tag "https://cdn3.iconfinder.com/data/icons/sympletts-part-8/128/pot-flower-512.png", class: "q-logo" %><%= plant.space.downcase %> plant</span>
+                <span class="badge badge-pill badge-light"> <%= image_tag "https://cdn4.iconfinder.com/data/icons/dog-breed-minimal-outline/512/Dalmatian-512.png", class: "q-logo" %> <%= plant.pet_friendly ? "pet friendly" : "toxic for pets" %></span>
               </div>
               <div class="modal-footer">
                 <%= link_to "pick me!", user_plants_path(plant_id: plant.id), method: :post, class: "btn btn-main" %>

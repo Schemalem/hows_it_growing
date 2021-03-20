@@ -1,11 +1,21 @@
 .badges {
+  // .badge-light{
+  //   color: #474748;
+  //   border: solid 1px #373738;
+  // }
+
   .badge-light{
-    color: #474748;
-    border: solid 1px #373738;
+    color: white;
+    background-color: rgba(0,0,0,0.25);
+    border: solid 1px white;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+
+
   }
 
   img {
     height: 20px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
   }
 
   // text-shadow: 1px 1px 1px rgba(0,0,0,0.3);

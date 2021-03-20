@@ -18,7 +18,7 @@
     <!-- Product Description -->
     <div class="product-description">
       <h2><%= @plant.name.downcase %></h2>
-      <p><%= @plant.description %></p>
+      <p><%= @plant.description.downcase %></p>
       <div class="d-flex mb-3">
         <%= link_to "add me to your patch", user_plants_path(plant_id: @plant.id), method: :post, class: "btn btn-light mb-2 w-50" %>
       </div>
@@ -28,7 +28,7 @@
       <h4 class="pl-2 pb-2">how to raise me <%=image_tag "https://cdn3.iconfinder.com/data/icons/farm-outline-5/32/Farm_agriculture_hand_plant_grow_nature-256.png", class: "q-logo"%></h4>
       <ul>
           <li> <%= image_tag "https://cdn2.iconfinder.com/data/icons/spring-31/30/Flower-3-512.png", class: "q-logo mr-2" %> i am a <strong><%=  @plant.plant_type.downcase%></strong> </li>
-          <li> <%= image_tag "https://www.flaticon.com/svg/vstatic/svg/2917/2917740.svg?token=exp=1616258824~hmac=e6837985d07552600fd1b02deac6259d", class: "q-logo mr-2" %> find some nice <strong><%=  @plant.space.downcase%></strong>  space for me to bloom</li>
+          <li> <%= image_tag "https://cdn3.iconfinder.com/data/icons/sympletts-part-8/128/pot-flower-512.png", class: "q-logo mr-2" %> find some nice <strong><%=  @plant.space.downcase%></strong>  space for me to bloom</li>
           <li> <%= image_tag "https://cdn4.iconfinder.com/data/icons/dog-breed-minimal-outline/512/Dalmatian-512.png", class: "q-logo mr-2" %><strong><%= @plant.pet_friendly ? "pet friendly" : "toxic for pets" %></strong>  </li>
           <li> <%= image_tag "https://cdn2.iconfinder.com/data/icons/spring-31/30/Watering_Can-512.png", class: "q-logo mr-2" %> i need to be sprinkled with  <strong><%=  @plant.watering.downcase%></strong> </li>
           <li> <%= image_tag "https://cdn3.iconfinder.com/data/icons/sympletts-free-sampler/128/sun-512.png", class: "q-logo" %> let it shine! i need <strong><%=  @plant.light.downcase%></strong> </li>
