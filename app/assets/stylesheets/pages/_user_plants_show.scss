@@ -3,7 +3,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px 5px;
-  //height: calc(100vh - 161px);
+  min-height: calc(100vh - 151px);
+  //height: 100%;
   overflow: hidden;
 }
 
@@ -18,7 +19,7 @@
   padding: 20px 50px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  //justify-content: space-evenly;
   position: relative;
 
   h2 {
@@ -48,11 +49,20 @@
   // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   // margin: 8px;
   //width: auto;
+  height: 100%;
 
   img {
-    height: calc(100vh - 161px);
+   // height: calc(100vh - 151px);
+    height: 100%;
     width: 100%;
     object-fit: cover;
+    object-position: center;
   }
 }
+
+.carousel-item, .carousel-inner, .carousel {
+  height: 100%
+}
+
+
 

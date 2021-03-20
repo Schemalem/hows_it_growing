@@ -13,7 +13,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 5px 15px;
-  height: calc(100vh - 161px);
+  min-height: calc(100vh - 151px);
   overflow: hidden;
 
 }
@@ -31,9 +31,11 @@
   order: 1;
   justify-content: left;
   top: 0;
+  height: 100%;
 
   img {
-    height: calc(100vh - 161px);
+    //height: calc(100vh - 161px);
+    height: 100%;
     width: 100%;
     object-fit: cover;
   }
@@ -73,7 +75,7 @@
   padding: 5px 30px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  // justify-content: space-evenly;
   position: relative;
 }
 
