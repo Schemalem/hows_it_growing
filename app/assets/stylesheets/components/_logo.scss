@@ -57,7 +57,7 @@
             min-height: 40px;
             font-size: 18px;
             font-weight: normal;
-    
+
             &::placeholder {
                 color: #b0adad;
             }
@@ -111,6 +111,9 @@
 .overlay-text {
     padding: 150px 50px;
     color: white;
+//     padding-left: 30px;
+//     padding-right: 30px;
+//     display: block;
     position: absolute; /* Every absolute position should be contained by a relative position. */
     top: 0; /* Every position is set to 0. */
     right: 0;
