@@ -9,13 +9,13 @@
         <h1 class="login-title">log in</h1>
           <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="form-group">
-              <%= f.input :email,
+              <%= f.input :email, placeholder: 'user@domain.com',
                 required: false,
                 autofocus: true,
                 input_html: { autocomplete: "email" } %>
             </div>
             <div class="form-group mb-4">
-              <%= f.input :password,
+              <%= f.input :password, placeholder: '********************************************************* ',
                 required: false,
                 input_html: { autocomplete: "current-password" } %>
             </div>
@@ -28,11 +28,13 @@
       </div>
     </div>
     <div class="col-sm-6 px-0 d-none d-sm-block">
-      <%= image_tag "leaf.jpeg", class: "login-img" %>
-        <div class="text-block">
+      <div class="text-block">
+        <%= image_tag "leaf.jpeg"%>
+          <span class="overlay-text">
           <h5>aloe there,</h5>
           <h5>new friend</h5>
-          <h4>well come back to your plant patch</h4>
+          <h4>welcome back to your plant patch</h4>
+          </span>
         </div>
   </div>
 </div>
