@@ -1,13 +1,16 @@
-<div class="container">
+<div class="container-fluid">
   <div class="title-module">
     <h2>update your <strong><%= @user_plant.plant.name.downcase%></strong></h2>
+    <%= image_tag "hig-logo-plant.png", class: "q-logo" %>
   </div>
-  <div class="form">
-    <%= simple_form_for [ @user_plant ] do |f| %>
-      <%= f.input :start_date, as: :date, html5: true %>
-      <%= f.input :size, placeholder: "in inches" %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-      <%= f.submit "update!", class: "btn btn-main" %>
-    <% end %>
+  <div class="form b-form">
+    <div class="form-content">
+      <%= simple_form_for [ @user_plant ] do |f| %>
+        <%= f.input :start_date, label: "when did you start growing this plant?", as: :date, html5: true %>
+        <%= f.input :size, label: "how tall is this plant?", placeholder: "in inches" %>
+        <%= f.input :photos, label: "upload some pics of your pretty plant!", as: :file, input_html: { multiple: true } %>
+        <%= f.submit "update!", class: "btn btn-light" %>
+      <% end %>
+    </div>
   </div>
 </div>
