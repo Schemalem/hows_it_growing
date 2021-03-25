@@ -6,28 +6,13 @@
   </div>
 </div>
 
+
 <div class="q-module">
   <div class="container">
     <h2><strong>lettuce</strong> get started... </h2>
     <%= image_tag "hig-logo-plant.png", class: "q-logo" %>
     <p> what's your goal? </p>
   </div>
-
-
-<%= form_tag plants_path, method: :get do %>
-    <div class="flexbox">
-      <div class="search">
-      <h1> bloomin' heck that's a lot of plants </h1>
-        <div>
-          <%= text_field_tag :query,
-          params[:query],
-          placeholder: "search our garden . . . . . . . . . "%>
-        </div>
-      </div>
-      <%# <h3>find a plant</h3> %>
-    </div>
-    <%= submit_tag "", style: "display: none;" %>
-<% end %>
 
   <%= link_to questions_path, :action => 'go' do %>
   <div class="container-fluid">
@@ -48,4 +33,3 @@
   </div>
 <% end %>
 </div>
-
