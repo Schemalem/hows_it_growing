@@ -13,7 +13,7 @@
           </div>
         <%#= cl_image_tag plant.photo.key, height: 300, width: 400, crop: :fill %>
           <div class="match-info">
-            <div>
+            <div id="plant-header">
               <h3><%=  plant.name.downcase %><%#= link_to plant.name, plant_path(plant)%> </h3>
               <!-- <div class="badges">
                 <span class="badge badge-pill badge-primary"><%= plant.plant_watering_message.downcase %></span>
@@ -22,7 +22,9 @@
               </div>
  -->
             </div>
-            <%= link_to "pick me!", user_plants_path(plant_id: plant.id), method: :post, class: "btn btn-light" %>
+            <div id="pick-me-button">
+              <%= link_to "pick me!", user_plants_path(plant_id: plant.id), method: :post, class: "btn btn-light" %>
+            </div>
             <%#= root for link_to above: user_plants_path(plant_id: plant.id) points to create method in user_plants, passes the plant.is as plant_id in the () section%>
           </div>
         </div>

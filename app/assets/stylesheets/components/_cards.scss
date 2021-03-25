@@ -78,6 +78,10 @@
   grid-gap: 35px;
   margin: 20px auto;
   padding: 25px;
+
+  h3{
+    text-align: left;
+  }
 }
 
 @media(max-width: 992px) {
@@ -116,10 +120,12 @@
   background-color: $main;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  // align-items: flex-end;
   position: relative;
   text-align: center;
+
 }
+
 
 .card-authors {
   margin: auto;
@@ -129,11 +135,13 @@
   background: white;
   margin-top: 60px;
   margin-bottom: 40px;
+  max-width: 1860px;
 
   img {
     height: 200px;
     max-height: 400px;
     min-width: 300px;
+    object-fit: cover;
   }
 
   .description {
@@ -142,8 +150,9 @@
     // max-width: 650px;
   }
 
-  #raz {
+  .raz {
     text-align: right;
+    flex-grow: 1;
   }
 }
 
