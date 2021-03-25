@@ -7,12 +7,12 @@
     <div class="container-fluid">
       <div class="form">
         <%= simple_form_for [ @match ] do |f| %>
-            <%= f.input :q1, label: "what's your goal?", as: :radio_buttons,
+            <%= f.input :q1, label: "what do you want to grow?", as: :radio_buttons,
                 collection_wrapper_tag: 'div',
                 collection_wrapper_class: 'q-cards',
                 item_wrapper_class: 'question-card radio-button',
                 input_html: { class: "category-selector" },
-                collection: [ "grow something edible", "grow something beautiful", "grow something unkillable", "grow something for fun"] %>
+                collection: [ "something edible", "something beautiful", "something unkillable", "something for fun"] %>
         <div class="container">
           <%= image_tag "hig-logo-plant.png", class: "q-logo" %>
         </div>
