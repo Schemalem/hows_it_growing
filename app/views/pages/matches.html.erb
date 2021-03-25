@@ -60,7 +60,9 @@
 
   <p>want to <strong>seed</strong> what else is out there? click to randomise!</p>
   <div class="d-flex justify-content-center pt-2">
-    <%= link_to "feeling lucky?", matches_path, class: "btn btn-main" %>
+    <%= link_to matches_path, class: "btn btn-main" do%>
+      <i class="fas fa-dice-three"></i><span> lucky dip!</span>
+    <% end %>
   </div>
 
 </div>
