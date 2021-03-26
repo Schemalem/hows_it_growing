@@ -9,7 +9,7 @@
         <%= simple_form_for [ @match ] do |f| %>
             <%= f.input :q1, label: "what do you want to grow?", as: :radio_buttons,
                 collection_wrapper_tag: 'div',
-                collection_wrapper_class: 'q-cards',
+                collection_wrapper_class: 'goal-cards',
                 item_wrapper_class: 'question-card radio-button',
                 input_html: { class: "category-selector" },
                 collection: [ "something edible", "something beautiful", "something unkillable", "something for fun"] %>
