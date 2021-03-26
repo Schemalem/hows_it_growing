@@ -26,3 +26,23 @@
   display: flex;
   flex-direction: column;
 }
+
+@media(max-width: 650px) {
+  .banner {
+    background-size: cover;
+    background-position: bottom;
+    padding: 10px 15px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+
+     h1 {
+      color: $main;
+    }
+
+    p {
+      max-width: 321px;
+    }
+  }
+
+}

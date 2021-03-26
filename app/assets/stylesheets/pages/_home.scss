@@ -10,6 +10,24 @@
   }
 }
 
+@media(max-width: 650px) {
+  .q-module{
+    margin: 20px 20px;
+  }
+
+  .footer {
+    text-align: center;
+  }
+
+  .footer-info {
+    text-align: center;
+  }
+
+  .footer-tiles {
+    margin: 8px;
+  }
+}
+
 .q-logo {
   height: 35px;
 }

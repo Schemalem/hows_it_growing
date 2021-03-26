@@ -81,3 +81,16 @@
   // html {
   //   scroll-behavior: smooth;
   // }
+
+  // mobile resizing
+  @media(max-width: 650px) {
+    input {
+      max-width: 300px;
+    }
+
+    .search {
+      h1 {
+        font-size: xx-large;
+      }
+    }
+  }
