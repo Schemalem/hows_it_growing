@@ -37,6 +37,7 @@ class UserPlantsController < ApplicationController
     @user_plant = UserPlant.find(params[:id])
     if @user_plant.update(user_plant_params)
       redirect_to @user_plant, notice: "good chives only. your plant was successfully updated 🌱"
+      #redirect_to :root
     else
       render :edit
     end
