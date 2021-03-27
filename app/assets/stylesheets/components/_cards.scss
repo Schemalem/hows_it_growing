@@ -188,8 +188,8 @@
 .card-author {
   display: flex;
   background: white;
-  margin-top: 60px;
-  margin-bottom: 40px;
+  margin-top: 16px;
+  margin-bottom: 16px;
   max-width: 1860px;
 
   img {
@@ -202,6 +202,7 @@
   .description {
     margin-left: 8px;
     padding: 16px;
+    margin-top: 56px;
     // max-width: 650px;
   }
 
