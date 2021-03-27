@@ -5,7 +5,13 @@
   </div>
   <div class="form b-form">
     <div class="form-content">
-      <%= simple_form_for [ @user_plant ] do |f| %>
+  <!--     <%#= simple_form_for [ @user_plant ] do |f| %>
+        <%#= f.input :start_date, label: "when did you start growing this plant?", as: :date, html5: true %>
+        <%#= f.input :size, label: "how tall is this plant?", placeholder: "in inches" %>
+        <%#= f.input :photos, label: "upload some pics of your pretty plant!", as: :file, input_html: { multiple: true } %>
+        <%#= f.submit "update!", class: "btn btn-light" %> -->
+
+      <%= simple_form_for @user_plant, url: user_plant_path, method: :patch do |f| %>
         <%= f.input :start_date, label: "when did you start growing this plant?", as: :date, html5: true %>
         <%= f.input :size, label: "how tall is this plant?", placeholder: "in inches" %>
         <%= f.input :photos, label: "upload some pics of your pretty plant!", as: :file, input_html: { multiple: true } %>
